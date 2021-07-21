@@ -4,13 +4,11 @@ define unknown = Character('????', color="#ffffff")
 
 define talkedAboutFather = False
 define talkedAboutMother = False
-define talkedAboutBrotherOlder = False
 define talkedAboutBrotherYounger = False
+define talkedAboutBrotherOlder = False
 
 define MentionedOlderBrotherName = False
-
-define finishedMintTea = False
-define finishedBeer = False
+define perfectPlaceperfectTime = False
 
 #-----mina art----
 #mina neutral
@@ -34,6 +32,7 @@ menu:
         jump realxedMina
 
 label friendlyMina:
+    $ perfectPlaceperfectTime = True
     unknown "Hi there, you're parked way out in the middle of no where"
     unknown "That must be really bad for business, unless this place is really popping any time other than now."
     mina "Oh, I am Mina by the way. I don't know where I am but you seem very friendly."
@@ -51,18 +50,18 @@ label Stage1Mina:
     mina "So what are you offering?"
     "What should Mina start with?"
 menu:
-    "Molokheya and Rice":
-        jump Starter_MRice_Mina
     "Tea with mint":
         jump Start_MTea_Mina
     "Beer":
         jump Start_Beer_Mina
+    "Molokheya and Rice":
+        jump Starter_MRice_Mina
 
 #if (Molokheya and rice) is selected as the first choice! (More info about the mom) and also, Mina won't accept it.
 label Starter_MRice_Mina:
     mina "Oh, we're going in for the food already?"
     mina "You know, I'm gonna ask you to push that back a little."
-    mina "This dish reminds me a lot of my mother, she used to make the best Molokheya I ever tasted."
+    mina "This dish, it reminds me a lot of my mother, she used to make the best Molokheya I ever tasted."
     mina "And rice to be frank."
     mina "I sometimes got it from restaurants because I would hang out with friends."
     mina "But none of these ones tasted as good as the one at home."
@@ -81,10 +80,9 @@ menu:
         $ talkedAboutMother = True
         mina "When I was still living with my parents, I remember feeling a lot of extra pressure"
         mina "Most of it was because they were very vocal of their expecations of me or my brothers."
-        mina "My mother wasn't \"vocal\" in her own way. She used to have this look that made me feel like a disappointment."
+        mina "My mother was \"vocal\" in her own way. She used to have this look that made me feel like a disappointment."
         "mina sighs.."
         mina "Anyway"
-        mina "So what do you have for me to start with?"
         jump Starters1_Again_Mina
 
 #After "Molokheya and rice" is rejected
@@ -181,7 +179,6 @@ label MTea_Mina:
     mina "I am glad we talked about these things"
     "Mina smiles at you"
     mina "I am glad your tea reminded me of that!"
-    $ finishedMintTea = True
     jump FoodOptions2_Mina
 
 label Start_Beer_Mina:
@@ -261,12 +258,13 @@ label Beer_Mina:
     mina "He didn't lie to anyone about who he was but he knew what we needed and gave it to us"
     mina "I learned a lot on that day"
     mina "I started watching my behaviour and focusing on the people around me and tried not to be a heavy weight on their hearts"
-    show mina neutral
-    mina "So Chef, what do you have next?"
+    mina "Thank you for the beer"
     jump FoodOptions2_Mina
 
 label FoodOptions2_Mina:
-"What would you offer Mina?"
+    show mina neutral
+    mina "So Chef, what do you have next?"
+    "What dish are you gonna offer Mina?"
 menu:
     "Molokheya and Rice":
         jump FoodOptions2_MolokheyaAndRice
@@ -274,10 +272,138 @@ menu:
         jump FoodOptions2_Koshary
 
 label FoodOptions2_MolokheyaAndRice:
+    "You start preparing the dish"
+    "Preparing the rice, curshing Molokheya leaves and getting the soup ready"
+    mina "We had two versions of this dish at home"
+    mina "We usually eat vegetarian for two thirds of the year, you seem to be doing that version"
+    mina "It reminds me a lot of the time after I quit my first job and went back home for a while"
+    if talkedAboutMother:
+        show mina sigh
+        mina "Mom still had that look that made me feel like I did something wrong"
+        mina "I don't even think she knew what I did at my work"
+        mina "But she still expressed her \"disappointment\" or whatever"
+    #sfx something is finished
+    "The dish is done!"
+    "Your pour the Molokheya in the rice and present it to Mina"
+    mina "aah! smells great!"
+    "Mina starts eating the dish"
+    show mina remembering
+    mina "I remember something!"
+    mina "The first few days after I was back, there was some tension between me and mom"
+    if talkedAboutMother:
+        mina "She kept asking what was my next opportunity"
+        mina "\"So you just left without having a plan?\" She asked"
+        mina "\"I couldn't stay any longer, it was very draining\" I replied"
+    mina "She said that I let go of good opportunities really quickly"
+    mina "\"You have to learn how to take a punch, you're being too soft\""
+    mina "I left the dinner table and went to my room"
+    mina "It felt like I was in my teens again"
+    mina "Only this time, I was the one that quickly got out again and asked her to talk"
+    mina "I had decided this time to sit and listen very carefuly and not let anything get on my nerve"
+    mina "I asked my brothers to give us sometime and my dad had already headed to bed."
+    mina "She began everything by talking about my choices and how she thinks they were wrong"
+    mina "I let her finish and I asked her if she ever regretted a choice"
+    mina "I told her that I took my choices knowing that they might cost me better things"
+    mina "I still do not reget them"
+    mina "She opened up about the things she gave up in her life"
+    mina "Painting, promotions, even driving"
+    mina "She said that she always picked the safest options and it made sense to her"
+    mina "But at the same time she felt regret"
+    mina "I think we ended up agreeing to support each other's crazy decisions more than the safe ones"
+    mina "Which made sense then but I think it shouldn't apply to every decision"
+    mina "However, I remember now that she went back to painting and she got her driving license after she retired"
+    mina "I was very happy for her!"
+    mina "Thank you for the meal!"
     jump Ending_Mina
 
 label FoodOptions2_Koshary:
+    $ talkedAboutBrotherOlder = True
+    mina "Koshary, a really messy dish! "
+    extend "But it's exciting!"
+    mina "When I was younger, I used to eat it every Friday after church"
+    if MentionedOlderBrotherName:
+        mina "Thomas, my older brother, always tagged along"
+    else:
+        mina "My older brother, always tagged along"
+        mina "His name is Thomas, by the way"
+    mina "My younger brother, David, didn't like it at all"
+    mina "It's too much for the stomach to handle"
+    mina "I'm sure you know, chef"
+    "You don't know."
+    "That doesn't stop you from making the best koshary dish"
+    mina "I can't wait to taste this one"
+    mina "Something about Koshary in Egypt, you just never know what you'll get at each place"
+    mina "It always tasted a little different at every place that made it"
+    mina "Even the same chain of restaurants."
+    "You prepare the pasta, lentils, rice, chickpeas and salsa"
+    "-and of course the fry the onions"
+    show mina sigh
+    if talkedAboutFather:
+        mina "He was of course gentler than dad in many ways"
+        mina "But he still tried to make sense of dad's control over us"
+    if talkedAboutMother:
+        mina "He wasn't telling us he was disappointed"
+        mina "But he was always silent when mom did that"
+    mina "It felt like he thought he was the guardian of his younger siblings"
+    mina "But in reality it felt like he was a lieutenant to the parents"
+    "Koshary is finally done!"
+    "You put everything in one dish"
+    show mina neutral
+    mina "Let's dive in!"
+    "Mina grabs the dish and starts eating"
+    mina "Heyy!"
+    show mina remembering
+    mina "It was at some time of the year when we were fasting"
+    extend "-only eat vegetarian food"
+    mina "Thomas visited me at my new home to say hi"
+    mina "He asked to take me out for Koshary"
+    mina "We went out to one of the good Koshary places"
+    mina "\"Mina,\" He said, \"I want to apologize\""
+    mina "I wondered what he meant with that"
+    mina "Turns out he felt guitly for all the time of us at home"
+    mina "He says he should have been a better brother"
+    mina "\"Are you doing this again?\" I asked "
+    extend "\"You're being hard on yourself again\""
+    mina "I told him that me and David already knew that he was as hard on himself as he was on us"
+    mina "I said that we were waiting for him to realize it. We thought that since we did he should've already done it."
+    mina "\"I think in a way I'm the youngest then\" He said"
+    mina "He wasn't"
+    mina "But I agreed cause I wanted him to feel good!"
+    mina "To be fair, David told me that about Thomas but I didn't believe it"
+    mina "I only believed it when I heard it from him and I'm glad I did"
+    mina "Thank you for the meal!"
     jump Ending_Mina
 
 label Ending_Mina:
+    show mina neutral
+    mina "I think that's it huh?"
+    mina "I don't think I figured out where we are still"
+    mina "But I'm glad I ran into you"
+    mina "I hope I wasn't rambling for too long. For some reason, I just feel like opening up about my life"
+    mina "I never got to hear your story"
+    mina "Maybe let's take it from now and move backwards, how did you get here?"
+    "..."
+    mina "Wait, why did you get here might be more important"
+    mina "This place seems so far from the city, are you sure this is good for business?"
+    mina "It's a little odd of me asking this, but what is the city in the back?"
+    mina "My head is so foggy, I can't remember how the day even started today"
+    show mina sigh
+    mina "Hey.. I keep getting these flashes of a farm"
+    mina "It's weird though, I see people that look like my family but they're much younger"
+    mina "..."
+    show mina remembering
+    mina "They're my kids! And my grandkids!"
+    mina "You're saying I lived long enough to meet all of them"
+    mina "I had a farm and I grew old in it with my loved ones"
+    mina "I made sure I didn't repeat my same mistakes or the mistakes my family has done"
+    show mina neutral
+    mina "I made new ones"
+    show mina relaxed
+    mina "Thank you for showing me my life"
+    mina "I went out surrounded by love and understanding"
+    mina "Whatever your job is, you're doing great"
+    "He smiles and closes his eyes."
+    if perfectPlaceperfectTime:
+        mina "Perfect place, perfect time"
+    "His form fades away until there is nothing left."
     return

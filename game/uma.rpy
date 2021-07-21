@@ -163,6 +163,7 @@ label next:
     uma "I only ate Maggi noodles that whole month, but he was worth it."
     uma "..."
     uma "...most people don\'t understand."
+    #we can add a condition here if she already talked about the parents, she can say the next part (suggestion :3)
     uma "My parents most of all."
     uma "They wanted me to have a life that I didn\'t want."
     uma "But I\'m my own person! I had a job, I lived and worked on my own."
@@ -265,6 +266,8 @@ label realization:
     
     uma "..."
     
+#show uma sad #(renpy puts placeholders on its own)
+
     uma "I need to go back!!"
     
     "Her eyes begin to fill with tears and she starts looking around helplessly. You have no idea how to respond."
@@ -361,4 +364,3 @@ label end:
     uma "I hope I\'ll see you again someday...Golu..."
     
     "Her form fades away until there is nothing left."
-
