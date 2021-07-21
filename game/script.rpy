@@ -9,8 +9,8 @@
 # The game starts here.
 
 label start:
-    jump uma_story
-    jump startMina
+    call uma_story
+    call startMina
     
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
