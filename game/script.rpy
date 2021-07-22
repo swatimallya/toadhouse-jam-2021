@@ -5,10 +5,17 @@
 
 #define e = Character("Eileen")
 
+#image background:
+ #     zoom 0.75
+  #    "bg street.png"
+
 
 # The game starts here.
 
 label start:
+    #scene bg street #original was too big
+    #scene background
+    scene bg street
     call uma_story
     call startMina
     
