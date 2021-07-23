@@ -3,6 +3,7 @@ define uma = Character(_("Uma"), color="FFA500")
 define audio.nightAmbience = "audio/NightAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
 define audio.plate2 = "audio/Plate2.ogg"
+define audio.cooking = "audio/Cooking.ogg"
 
 init python:
     renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
@@ -68,7 +69,8 @@ label choices1:
             jump _chai
 
 label _vada_pav:
-    play sound plate volume 0.8
+    play sound cooking volume 0.6
+    queue sound plate volume 0.8
     queue sound plate2 volume 0.5
     queue sound plate volume 0.3
     "You place a steaming hot plate of vada pav in front of her, along with an assortment of chutneys."
@@ -112,7 +114,8 @@ label _vada_pav:
     jump choices2
 
 label _masala_dosa:
-    play sound plate volume 0.8
+    play sound cooking volume 0.6
+    queue sound plate volume 0.8
     queue sound plate2 volume 0.5
     queue sound plate volume 0.3
     "You place a thali with a large masala dosa, bhaji, and several assorted chutneys in front of her."
