@@ -4,10 +4,17 @@ define audio.nightAmbience = "audio/NightAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
 define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
+define audio.mainTheme = "audio/MainTheme.ogg"
 
 init python:
     renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
-
+    renpy.music.register_channel("umaDrums", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaSoothingMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaHappinessMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaSorrowMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaSoothingHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaHappinessHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("umaSorrowHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
 
 #-----uma art----
 #uma neutral
@@ -17,7 +24,24 @@ init python:
 #uma sad + unique var pained
 
 label uma_story:
-    play ambience nightAmbience fadein 0.5 volume 0.4
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
+
+    $ renpy.music.play("audio/UmaTheme_Drums.ogg", channel="umaDrums",loop=True, synchro_start=True, fadein=1.0, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaSoothingTheme_Melody.ogg", channel="umaSoothingMelody",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaSoothingTheme_Harmony.ogg", channel="umaSoothingHarmony",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaHappinessTheme_Melody.ogg", channel="umaHappinessMelody",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaHappinessTheme_Harmony.ogg", channel="umaHappinessHarmony",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaSorrowTheme_Melody.ogg", channel="umaSorrowMelody",loop=True, synchro_start=True, fadein=2.5, tight=None, fadeout=2.5, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/UmaSorrowTheme_Harmony.ogg", channel="umaSorrowHarmony",loop=True, synchro_start=True, fadein=2.0, fadeout=2.0, tight=None, if_changed=False, relative_volume=1.0)
+
+    play ambience nightAmbience fadein 1.0 volume 0.6
+
     "A woman hesitantly approaches your stand."
 
     show uma neutral
@@ -60,6 +84,7 @@ label say_nothing:
     jump choices1
 
 label choices1:
+
     menu:
         "Offer her a plate of vada pav. ":
             jump _vada_pav
@@ -68,11 +93,12 @@ label choices1:
         "Offer her a hot cup of chai. ":
             jump _chai
 
+
 label _vada_pav:
-    play sound cooking volume 0.6
-    queue sound plate volume 0.8
-    queue sound plate2 volume 0.5
-    queue sound plate volume 0.3
+    play sound cooking volume 0.7
+    queue sound plate
+    queue sound plate2 volume 0.7
+    queue sound plate volume 0.5
     "You place a steaming hot plate of vada pav in front of her, along with an assortment of chutneys."
 
     show uma surprised
@@ -82,6 +108,14 @@ label _vada_pav:
     "She picks it up and takes a bite, and a euphoric expression spreads across her face."
 
     show uma happy
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
 
     unknown_character "Wow, that\'s really authentic! Tastes just like my favourite food stand back in Bengaluru."
 
@@ -114,10 +148,10 @@ label _vada_pav:
     jump choices2
 
 label _masala_dosa:
-    play sound cooking volume 0.6
-    queue sound plate volume 0.8
-    queue sound plate2 volume 0.5
-    queue sound plate volume 0.3
+    play sound cooking volume 0.7
+    queue sound plate
+    queue sound plate2 volume 0.7
+    queue sound plate volume 0.5
     "You place a thali with a large masala dosa, bhaji, and several assorted chutneys in front of her."
 
     show uma sad
@@ -129,6 +163,14 @@ label _masala_dosa:
     show uma neutral
 
     unknown_character "...it\'s good."
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowHarmony")
 
     unknown_character "Really good, in fact. Tastes just like the restaurant my..."
 
@@ -153,6 +195,7 @@ label _masala_dosa:
     jump choices2
 
 label _chai:
+
     "You place a freshly brewed cup of chai in front of her."
 
     unknown_character "Hm?"
@@ -162,6 +205,14 @@ label _chai:
     "She takes a sip, and her eyes grow wide with surprise."
 
     unknown_character "This...there\'s no way..."
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
 
     unknown_character "It tastes exactly how the chai stand below my apartment makes it."
 
@@ -180,6 +231,15 @@ label _chai:
     jump choices2
 
 label choices2:
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowHarmony")
+
     menu:
         "Raise a curious eyebrow. ":
             jump _eyebrow
@@ -228,6 +288,14 @@ label _small_smile:
 
 label next:
 
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowHarmony")
+
     show uma neutral
 
     uma "I found him on the street one evening."
@@ -270,6 +338,8 @@ label next:
 
 label memories:
 
+    stop ambience fadeout 1.0
+
     show uma pained
 
     "A strange expression comes over Uma. You feel your chest grow heavy."
@@ -293,6 +363,8 @@ label memories:
     "She places a hand over her heart."
 
     show uma sad
+
+    play ambience nightAmbience fadein 1.0 volume 0.6
 
     uma "I...collapsed..."
 
@@ -323,6 +395,15 @@ label memories:
     jump choices3
 
 label choices3:
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowHarmony")
+
     menu:
         "Nod hesitantly.":
             jump nod_hesitantly
@@ -368,6 +449,14 @@ label _silent:
 
 label realization:
 
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaSorrowHarmony")
+
     show uma sad
 
     uma "I don\'t...I don\'t even know what to say...what to think..."
@@ -391,6 +480,14 @@ label realization:
     uma "I need to go back!!"
 
     "Her eyes begin to fill with tears and she starts looking around helplessly. You have no idea how to respond."
+
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
 
     "Something prickles at the back of your mind...a memory."
 
@@ -427,6 +524,14 @@ label _tea_biscuits:
 
     show uma sad
 
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
+
     "Her tears subside and she reaches out and picks up a biscuit, taking a hesitant bite."
 
     show uma surprised
@@ -448,6 +553,14 @@ label _toffee:
 
     show uma sad
 
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
+
     "Her tears subside and she reaches out and unwraps a toffee, popping it in her mouth."
 
     show uma surprised
@@ -467,6 +580,14 @@ label _grapefruit_chips:
 
     show uma surprised
 
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
+
     uma "...these...!"
     "Her tears subside and she reaches out and takes a chip, placing it in her mouth."
     uma "These taste like home!"
@@ -481,6 +602,7 @@ label _grapefruit_chips:
     jump end
 
 label end:
+
     uma "..."
 
     show uma neutral
@@ -522,3 +644,11 @@ label end:
     uma "I hope I\'ll see you again someday...Golu..."
 
     "Her form fades away until there is nothing left."
+
+    $ renpy.music.stop(channel="umaDrums", fadeout=1.0)
+    $ renpy.music.stop(channel="umaSoothingMelody", fadeout=1.5)
+    $ renpy.music.stop(channel="umaHappinessMelody", fadeout=1.5)
+    $ renpy.music.stop(channel="umaSorrowMelody", fadeout=2.5)
+    $ renpy.music.stop(channel="umaSoothingHarmony", fadeout=1.5)
+    $ renpy.music.stop(channel="umaHappinessHarmony", fadeout=1.5)
+    $ renpy.music.stop(channel="umaSorrowHarmony", fadeout=2.0)
