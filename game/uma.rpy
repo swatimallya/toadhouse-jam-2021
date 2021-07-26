@@ -40,7 +40,7 @@ label uma_story:
     $ renpy.music.play("audio/UmaSorrowTheme_Melody.ogg", channel="umaSorrowMelody",loop=True, synchro_start=True, fadein=2.5, tight=None, fadeout=2.5, if_changed=False, relative_volume=1.0)
     $ renpy.music.play("audio/UmaSorrowTheme_Harmony.ogg", channel="umaSorrowHarmony",loop=True, synchro_start=True, fadein=2.0, fadeout=2.0, tight=None, if_changed=False, relative_volume=1.0)
 
-    play ambience nightAmbience fadein 1.0 volume 0.6
+    play ambience nightAmbience fadein 1.0 volume 0.7
 
     "A woman hesitantly approaches your stand."
 
@@ -95,10 +95,10 @@ label choices1:
 
 
 label _vada_pav:
-    play sound cooking volume 0.7
-    queue sound plate
-    queue sound plate2 volume 0.7
-    queue sound plate volume 0.5
+    play sound cooking volume 1.0
+    queue sound plate volume 1.0
+    queue sound plate2 volume 0.9
+    queue sound plate volume 0.8
     "You place a steaming hot plate of vada pav in front of her, along with an assortment of chutneys."
 
     show uma surprised
@@ -148,10 +148,10 @@ label _vada_pav:
     jump choices2
 
 label _masala_dosa:
-    play sound cooking volume 0.7
-    queue sound plate
-    queue sound plate2 volume 0.7
-    queue sound plate volume 0.5
+    play sound cooking volume 1.0
+    queue sound plate volume 1.0
+    queue sound plate2 volume 0.9
+    queue sound plate volume 0.8
     "You place a thali with a large masala dosa, bhaji, and several assorted chutneys in front of her."
 
     show uma sad
@@ -481,6 +481,10 @@ label realization:
 
     "Her eyes begin to fill with tears and she starts looking around helplessly. You have no idea how to respond."
 
+    "Something prickles at the back of your mind...a memory."
+
+    "But this time, it feels more personal."
+
     $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingHarmony")
@@ -488,10 +492,6 @@ label realization:
     $ renpy.music.set_volume(1.0, 0.0, channel="umaHappinessHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
-
-    "Something prickles at the back of your mind...a memory."
-
-    "But this time, it feels more personal."
 
     "All your life, you never thought anyone could care this much about another human being, much less an animal."
 
