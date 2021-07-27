@@ -155,7 +155,7 @@ label MTea_Mina:
     show mina remembering
     extend "I remember!"
     mina "The night before the wedding! Dad came over to my house and we stayed in the garden outside."
-    mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs"
+    mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs."
     mina "I had the kettle we used to have when I was younger, it looks like this one you have here."
     if talkedAboutFather:
         mina "At home, we had a spot we preferred on the stove."
@@ -273,7 +273,7 @@ menu:
 
 label FoodOptions2_MolokheyaAndRice:
     "You start preparing the dish."
-    "Preparing the rice, curshing Molokheya leaves and getting the soup ready."
+    "Preparing the rice, crushing Molokheya leaves and getting the soup ready."
     mina "We had two versions of this dish at home."
     mina "We usually eat vegetarian for two thirds of the year, you seem to be doing that version."
     mina "It reminds me a lot of the time after I quit my first job and went back home for a while."
