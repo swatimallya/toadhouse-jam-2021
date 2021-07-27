@@ -39,8 +39,6 @@ label uma_story:
     $ renpy.music.play("audio/UmaSorrowTheme_Melody.ogg", channel="umaSorrowMelody",loop=True, synchro_start=True, fadein=2.5, tight=None, fadeout=2.5, if_changed=False, relative_volume=1.0)
     $ renpy.music.play("audio/UmaSorrowTheme_Harmony.ogg", channel="umaSorrowHarmony",loop=True, synchro_start=True, fadein=2.0, fadeout=2.0, tight=None, if_changed=False, relative_volume=1.0)
 
-    play ambience nightAmbience fadein 1.0 volume 0.7
-
     "A woman hesitantly approaches your stand."
 
     show uma neutral
@@ -183,7 +181,7 @@ label _masala_dosa:
     uma "\"Uma, you need to choose a good boy and settle down right now.\""
 
     uma "\"Uma, we want grandchildren. Your younger siblings are married. Why are you such a disappointment?\""
-    
+
     show uma neutral
 
     uma "..."
@@ -353,8 +351,6 @@ label next:
 
 label memories:
 
-    stop ambience fadeout 1.0
-
     show uma pained
 
     "A strange expression comes over Uma. You feel your chest grow heavy."
@@ -364,6 +360,8 @@ label memories:
     "Memories...that you somehow know aren\'t your own."
 
     uma "Urgh...I...in the end...?"
+
+    stop ambience fadeout 1.0
 
     "You see a woman waving goodbye to the owner of a food stall."
 
@@ -381,7 +379,7 @@ label memories:
 
     show uma sad
 
-    play ambience nightAmbience fadein 1.0 volume 0.6
+    play ambience nightAmbience fadein 1.0 volume 0.3
 
     uma "I...collapsed..."
 
