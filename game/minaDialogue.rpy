@@ -12,6 +12,7 @@ define perfectPlaceperfectTime = False
 
 define audio.nightAmbience = "audio/NightAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
+define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
 
 #-----mina art----
@@ -83,6 +84,7 @@ menu:
 
 #if (Molokheya and rice) is selected as the first choice! (More info about the mom) and also, Mina won't accept it.
 label Starter_MRice_Mina:
+    play sound plate volume 1.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
@@ -156,11 +158,6 @@ menu:
     "...":
         $ talkedAboutFather = True
         "You say nothing and let Mina continue."
-        $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
-        $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
-        $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
         mina "It felt like he wanted to control everything."
         mina "My older brother, Thomas, was always on his side."
         $ MentionedOlderBrotherName = True
@@ -191,11 +188,6 @@ label MTea_Mina:
     "You bring out a kettle already filled with water and you place it on the stove." #heater??
     mina "Oh!"
     show mina remembering
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "Mina seems to have remembered something!"
     mina "That's how I used to drink it at home!"
     mina "We had the electric kettle but we used to make tea old school on the stove." #oven????
@@ -208,11 +200,6 @@ label MTea_Mina:
     mina "Even then though, dad didn't enjoy the tea that much."
     mina "I remember him saying it wasn't the best he'd had."
     #sfx kettle audio ringing?
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "The kettle is ready, you turn off the stove."
     #sfx tea pouring
     "You pour the water into the cup and stir the tea and add the mint."
@@ -260,6 +247,8 @@ label MTea_Mina:
     mina "I am glad we talked about these things."
     "Mina smiles at you."
     mina "I am glad your tea reminded me of that!"
+
+    play ambience nightAmbience fadein 1.0 volume 0.3
     jump FoodOptions2_Mina
 
 label Start_Beer_Mina:
@@ -349,12 +338,12 @@ label Beer_Mina:
     mina "I explained to him the way I saw it in my head and how I felt that I had to take care of him."
     mina "And how I thought I was protecting him from the rest of the family because "
     extend "I saw the \"real\" them."
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     if talkedAboutBrotherYounger:
+        $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+        $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+        $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
         mina "But I realized David was always doing better than me mentally."
         mina "I had to ask him what his secret was."
     mina "He told me I didn't have to do all these mental gymnastics."
@@ -377,9 +366,9 @@ label FoodOptions2_Mina:
     play ambience nightAmbience fadein 1.0 volume 0.3
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
     show mina neutral
     mina "So Chef, what do you have next?"
     "What dish are you gonna offer Mina?"
@@ -406,6 +395,7 @@ label FoodOptions2_MolokheyaAndRice:
         mina "I don't even think she knew what I did at my work."
         mina "But she still expressed her \"disappointment\" or whatever."
     #sfx something is finished
+    play sound plate2 volume 1.0
     "The dish is done!"
     "Your pour the Molokheya in the rice and present it to Mina."
     mina "Aah! smells great!"
@@ -468,6 +458,7 @@ label FoodOptions2_Koshary:
     mina "Something about Koshary in Egypt, you just never know what you'll get at each place."
     mina "It always tasted a little different at every place that made it."
     mina "Even the same chain of restaurants."
+    play sound cooking volume 1.0
     "You prepare the pasta, lentils, rice, chickpeas and salsa."
     "-and of course the fry the onions."
     show mina sigh
@@ -479,6 +470,7 @@ label FoodOptions2_Koshary:
         mina "But he was always silent when mom did that."
     mina "It felt like he thought he was the guardian of his younger siblings."
     mina "But in reality it felt like he was a lieutenant to the parents."
+    play sound plate volume 1.0
     "Koshary is finally done!"
     "You put everything in one dish."
     show mina neutral
