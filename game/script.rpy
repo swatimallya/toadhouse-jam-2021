@@ -16,11 +16,11 @@ label start:
     #scene bg street #original was too big
     #scene background
     scene bg street
-    call intro
-    call uma_story
-    call interlude
+    #call intro
+    #call uma_story
+    #call interlude
     call startMina
-    
+
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.

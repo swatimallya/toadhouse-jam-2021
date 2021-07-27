@@ -29,10 +29,8 @@ init python:
     renpy.music.register_channel("minaDrums", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaHappyMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaFreeMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
-    renpy.music.register_channel("minaSadMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaHappyHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaFreeHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
-    renpy.music.register_channel("minaSadHarmony", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
 
 label startMina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
@@ -40,13 +38,12 @@ label startMina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
 
-    $ renpy.music.play("audio/MinaTheme_Drums.ogg", channel="minaDrums",loop=True, synchro_start=True, fadein=1.0, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
-    $ renpy.music.play("audio/MinaTheme_HappyMelody.ogg", channel="minaHappyMelody",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
-    $ renpy.music.play("audio/MinaTheme_HappyHarmony.ogg", channel="minaHappyHarmony",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
-    $ renpy.music.play("audio/MinaTheme_FreeHarmony.ogg", channel="minaFreeHarmony",loop=True, synchro_start=True, fadein=1.5, fadeout=1.5, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/MinaTheme_Drums.ogg", channel="minaDrums",loop=True, synchro_start=True, fadein=1.0, fadeout=1.0, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/MinaTheme_HappyMelody.ogg", channel="minaHappyMelody",loop=True, synchro_start=True, fadein=1.0, fadeout=1.0, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/MinaTheme_FreeMelody.ogg", channel="minaFreeMelody",loop=True, synchro_start=True, fadein=1.0, fadeout=1.0, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/MinaTheme_HappyHarmony.ogg", channel="minaHappyHarmony",loop=True, synchro_start=True, fadein=1.0, fadeout=1.0, tight=None, if_changed=False, relative_volume=1.0)
+    $ renpy.music.play("audio/MinaTheme_FreeHarmony.ogg", channel="minaFreeHarmony",loop=True, synchro_start=True, fadein=1.0, fadeout=1.0, tight=None, if_changed=False, relative_volume=1.0)
 
     "Another customer emerges from the shadow..."
     "He seems to be a little confused."
@@ -86,6 +83,11 @@ menu:
 
 #if (Molokheya and rice) is selected as the first choice! (More info about the mom) and also, Mina won't accept it.
 label Starter_MRice_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "Oh, we're going in for the food already?"
     mina "You know, I'm gonna ask you to push that back a little."
     mina "This dish, it reminds me a lot of my mother, she used to make the best Molokheya I ever tasted."
@@ -114,6 +116,11 @@ menu:
 
 #After "Molokheya and rice" is rejected
 label Starters1_Again_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "Remind me again what can I have?"
 menu:
     "Tea with mint":
@@ -123,9 +130,19 @@ menu:
 
 #if Mint tea was selected as the first choice! (More info about the dad)
 label Start_MTea_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "Oh! We're starting with mint tea!"
     mina "I know a lot of people who grew mint at their home to have it as fresh as possible!"
     #Talks about the dad and their problem together
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "You know, "
     extend "my father used to pick fresh mint from a small garden outside of his workplace." #extend is a built in character that is supposed to continue on the last line with the same character as above.
     show mina sigh
@@ -139,6 +156,11 @@ menu:
     "...":
         $ talkedAboutFather = True
         "You say nothing and let Mina continue."
+        $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+        $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+        $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+        $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
         mina "It felt like he wanted to control everything."
         mina "My older brother, Thomas, was always on his side."
         $ MentionedOlderBrotherName = True
@@ -151,14 +173,29 @@ menu:
 
 #if mint tea was not selected as the first choice!
 label Start1_MTea_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
     mina "Mint tea! Sounds good!"
     jump MTea_Mina
 
 #This happens either way since Mina won't reject it if chosen first or later.
 label MTea_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "You bring out a kettle already filled with water and you place it on the stove." #heater??
     mina "Oh!"
     show mina remembering
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "Mina seems to have remembered something!"
     mina "That's how I used to drink it at home!"
     mina "We had the electric kettle but we used to make tea old school on the stove." #oven????
@@ -171,6 +208,11 @@ label MTea_Mina:
     mina "Even then though, dad didn't enjoy the tea that much."
     mina "I remember him saying it wasn't the best he'd had."
     #sfx kettle audio ringing?
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "The kettle is ready, you turn off the stove."
     #sfx tea pouring
     "You pour the water into the cup and stir the tea and add the mint."
@@ -183,12 +225,10 @@ label MTea_Mina:
     extend "I remember!"
     stop ambience fadeout 1.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
 
     mina "The night before the wedding! Dad came over to my house and we stayed in the garden outside."
     mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs."
@@ -202,6 +242,11 @@ label MTea_Mina:
         mina "\"Mina,\" he said, \"I realized I was too hard to deal with too late.\""
     mina "He felt like a different person then, and whatever I felt was difficult between us just faded away."
     show mina relaxed
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
     "Mina takes a deep breath."
     mina "I also said sorry about being mean sometimes too."
     mina "The kettle was whistling too high by then."
@@ -220,11 +265,9 @@ label MTea_Mina:
 label Start_Beer_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
 
     $ talkedAboutBrotherYounger = True
     mina "Oh, beer, I'm down!"
@@ -248,8 +291,6 @@ label Start_Beer_Mina_2:
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
     "Mina looks at the sky and he seems to have something on his mind."
     mina "My younger brother, David, and I used to drink together more than our older brother."
     mina "He used to do crazy things when we were all living in the same house and he rarely got in trouble."
@@ -259,10 +300,20 @@ label Start_Beer_Mina_2:
     jump Beer_Mina
 
 label Start1_Beer_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
     mina "Beer it is then!"
     jump Beer_Mina
 
 label Beer_Mina:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
     "You grab a really big mug from under the counter."
     mina "Wow."
     "You start pouring the beer from the barrel inside the cart."
@@ -274,6 +325,11 @@ label Beer_Mina:
     mina "Heyy!"
     show mina remembering
     mina "I remember something!"
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     if talkedAboutBrotherYounger:
         mina "David! "
     else:
@@ -293,6 +349,11 @@ label Beer_Mina:
     mina "I explained to him the way I saw it in my head and how I felt that I had to take care of him."
     mina "And how I thought I was protecting him from the rest of the family because "
     extend "I saw the \"real\" them."
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     if talkedAboutBrotherYounger:
         mina "But I realized David was always doing better than me mentally."
         mina "I had to ask him what his secret was."
@@ -319,8 +380,6 @@ label FoodOptions2_Mina:
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
     show mina neutral
     mina "So Chef, what do you have next?"
     "What dish are you gonna offer Mina?"
@@ -331,6 +390,11 @@ menu:
         jump FoodOptions2_Koshary
 
 label FoodOptions2_MolokheyaAndRice:
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "You start preparing the dish."
     "Preparing the rice, crushing Molokheya leaves and getting the soup ready."
     mina "We had two versions of this dish at home."
@@ -347,6 +411,11 @@ label FoodOptions2_MolokheyaAndRice:
     mina "Aah! smells great!"
     "Mina starts eating the dish."
     show mina remembering
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "I remember something!"
     mina "The first few days after I was back, there was some tension between me and mom."
     if talkedAboutMother:
@@ -382,8 +451,6 @@ label FoodOptions2_Koshary:
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
     mina "Koshary, a really messy dish! "
     extend "But it's exciting!"
     mina "When I was younger, I used to eat it every Friday after church."
@@ -419,6 +486,11 @@ label FoodOptions2_Koshary:
     "Mina grabs the dish and starts eating."
     mina "Heyy!"
     show mina remembering
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "It was at some time of the year when we were fasting"
     extend "-only eating vegetarian food."
     mina "Thomas visited me at my new home to say hi."
@@ -442,12 +514,10 @@ label FoodOptions2_Koshary:
 
 label Ending_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
-    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
+    $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
+    $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
 
     show mina neutral
     mina "I think that's it huh?"
@@ -471,8 +541,6 @@ label Ending_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadMelody")
-    $ renpy.music.set_volume(0.0, 0.0, channel="minaSadHarmony")
     mina "They're my kids! And my grandkids!"
     mina "You're saying I lived long enough to meet all of them."
     mina "I had a farm and I grew old in it with my loved ones."
@@ -493,10 +561,9 @@ label Ending_Mina:
     "His form fades away until there is nothing left."
 
     $ renpy.music.stop(channel="minaDrums", fadeout=1.0)
-    $ renpy.music.stop(channel="minaHappyMelody", fadeout=1.5)
-    $ renpy.music.stop(channel="minaFreeMelody", fadeout=1.5)
-    $ renpy.music.stop(channel="minaSadMelody", fadeout=2.5)
-    $ renpy.music.stop(channel="minaHappyHarmony", fadeout=1.5)
-    $ renpy.music.stop(channel="minaFreeHarmony", fadeout=1.5)
-    $ renpy.music.stop(channel="minaSadHarmony", fadeout=2.0)
+    $ renpy.music.stop(channel="minaHappyMelody", fadeout=1.0)
+    $ renpy.music.stop(channel="minaFreeMelody", fadeout=1.0)
+    $ renpy.music.stop(channel="minaHappyHarmony", fadeout=1.0)
+    $ renpy.music.stop(channel="minaFreeHarmony", fadeout=1.0)
+
     return
