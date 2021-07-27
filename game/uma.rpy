@@ -44,6 +44,7 @@ label uma_story:
     "A woman hesitantly approaches your stand."
 
     show uma neutral
+    with dissolve
 
     unknown_character "...hello..."
     unknown_character "...this is a food stall, right?"

@@ -10,6 +10,9 @@ label intro:
     "You try to remember how you got here, where you came from, but your mind suddenly draws a blank."
     
     "You can\'t seem to recall anything about yourself at all."
+
+    show death neutral
+    with dissolve
     
     unknown_character "Ah, I see you\'ve gained consciousness."
     
@@ -106,6 +109,9 @@ label bye:
     unknown_character "Well, then, I\'ll just get out of your way."
     
     unknown_character "But I\'ll be close by, if you need me."
+
+    hide death
+    with dissolve
     
     "The enigmatic smile stays plastered on their face as they disappear into the shadows."
     
@@ -118,4 +124,3 @@ label bye:
     "..."
     
     "To your surprise, it doesn\'t take long."
-

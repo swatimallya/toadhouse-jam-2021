@@ -4,6 +4,9 @@ define death = Character(_("Death"), color="6B8E23")
 label interlude:
     "You raise a hand to your chest. The adrenaline rush is starting to wear off, and you\'re starting to process everything that just happened."
     
+    show death neutral
+    with dissolve
+
     unknown_character "So? How do you feel?"
     
     menu:
@@ -53,6 +56,9 @@ label why_me:
     death "Well, once again, I should let you go."
     
     death "Let\'s talk again after you\'ve spoken to another customer."
+
+    hide death
+    with dissolve
     
     "Their figure fades away once again, ever mysterious. You sigh and prepare yourself for the next person."
 
