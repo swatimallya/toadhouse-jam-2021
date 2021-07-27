@@ -1,10 +1,11 @@
 define unknown_character = Character(_("???"), color="FFFFFF")
 define uma = Character(_("Uma"), color="FFA500")
-define audio.nightAmbience = "audio/NightAmbience.ogg"
+define audio.oceanAmbience = "audio/OceanAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
 define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
 define audio.mainTheme = "audio/MainTheme.ogg"
+define audio.cup = "audio/Cup.ogg"
 
 init python:
     renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
@@ -191,6 +192,7 @@ label _masala_dosa:
     jump choices2
 
 label _chai:
+    play sound cup volume 1.0
 
     "You place a freshly brewed cup of chai in front of her."
 
@@ -379,7 +381,7 @@ label memories:
 
     show uma sad
 
-    play ambience nightAmbience fadein 1.0 volume 0.3
+    play ambience oceanAmbience fadein 1.0 volume 0.2
 
     uma "I...collapsed..."
 

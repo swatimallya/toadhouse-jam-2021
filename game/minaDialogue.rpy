@@ -10,10 +10,16 @@ define talkedAboutBrotherOlder = False
 define MentionedOlderBrotherName = False
 define perfectPlaceperfectTime = False
 
-define audio.nightAmbience = "audio/NightAmbience.ogg"
+define audio.oceanAmbience = "audio/OceanAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
 define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
+define audio.cupstir = "audio/CupwithStirring.ogg"
+define audio.pouring = "audio/Pouring1.ogg"
+define audio.pouring2 = "audio/Pouring2.ogg"
+define audio.kettle = "audio/Kettle.ogg"
+define audio.startStove = "audio/StartStove.ogg"
+define audio.stoveOff = "audio/OffStove.ogg"
 
 #-----mina art----
 #mina neutral
@@ -186,6 +192,7 @@ label MTea_Mina:
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "You bring out a kettle already filled with water and you place it on the stove." #heater??
+    play sound startStove volume 1.0
     mina "Oh!"
     show mina remembering
     "Mina seems to have remembered something!"
@@ -200,8 +207,12 @@ label MTea_Mina:
     mina "Even then though, dad didn't enjoy the tea that much."
     mina "I remember him saying it wasn't the best he'd had."
     #sfx kettle audio ringing?
+    play sound kettle volume 1.0
+    queue sound stoveOff volume 1.0
     "The kettle is ready, you turn off the stove."
     #sfx tea pouring
+    play sound pouring volume 1.0
+    queue sound cupstir volume 1.0
     "You pour the water into the cup and stir the tea and add the mint."
     mina "Yum! smells great!"
     "You present the cup to Mina."
@@ -248,7 +259,7 @@ label MTea_Mina:
     "Mina smiles at you."
     mina "I am glad your tea reminded me of that!"
 
-    play ambience nightAmbience fadein 1.0 volume 0.3
+    play ambience oceanAmbience fadein 1.0 volume 0.2
     jump FoodOptions2_Mina
 
 label Start_Beer_Mina:
@@ -363,7 +374,7 @@ label Beer_Mina:
     jump FoodOptions2_Mina
 
 label FoodOptions2_Mina:
-    play ambience nightAmbience fadein 1.0 volume 0.3
+    play ambience oceanAmbience fadein 1.0 volume 0.2
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")

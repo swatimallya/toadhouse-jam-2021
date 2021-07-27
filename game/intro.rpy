@@ -1,12 +1,12 @@
 define unknown_character = Character(_("???"), color="FFFFFF")
-define audio.nightAmbience = "audio/NightAmbience.ogg"
+define audio.oceanAmbience = "audio/OceanAmbience.ogg"
 define audio.mainTheme = "audio/MainTheme.ogg"
 
 init python:
     renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
 
 label intro:
-    play ambience nightAmbience fadein 1.0 volume 0.3
+    play ambience oceanAmbience fadein 1.0 volume 0.2
     play music mainTheme fadein 1.0
 
     "You open your eyes to an unfamiliar place."
