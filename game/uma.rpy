@@ -6,6 +6,7 @@ define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
 define audio.mainTheme = "audio/MainTheme.ogg"
 define audio.cup = "audio/Cup.ogg"
+define audio.streetAmbience = "audio/StreetAmbience.ogg"
 
 init python:
     renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
@@ -365,6 +366,8 @@ label memories:
 
     stop ambience fadeout 1.0
 
+    play sound streetAmbience volume 1.0
+
     "You see a woman waving goodbye to the owner of a food stall."
 
     "Then, as she turns to walk away, she suddenly collapses to the ground, clutching her chest."
@@ -375,13 +378,13 @@ label memories:
 
     show uma surprised
 
+    play ambience oceanAmbience fadein 1.0 volume 0.2
+
     uma "I..."
 
     "She places a hand over her heart."
 
     show uma sad
-
-    play ambience oceanAmbience fadein 1.0 volume 0.2
 
     uma "I...collapsed..."
 
