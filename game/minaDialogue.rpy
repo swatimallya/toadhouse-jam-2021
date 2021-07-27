@@ -21,7 +21,7 @@ define perfectPlaceperfectTime = False
 #tea pouring
 
 label startMina:
-    "Another customers emerges from the shadow..."
+    "Another customer emerges from the shadow..."
     "He seems to be a little confused."
 menu:
     "Invite him over":
