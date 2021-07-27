@@ -19,7 +19,6 @@ init python:
 #-----uma art----
 #uma neutral
 #uma happy + unique var content
-#uma angry
 #uma surprised
 #uma sad + unique var pained
 
@@ -178,8 +177,6 @@ label _masala_dosa:
 
     unknown_character "...my parents used to take me to when they needed to have \"important conversations\" with me."
 
-    show uma angry
-
     unknown_character "Like \"Uma, why are your grades so bad this year?\""
 
     uma "\"Uma, you need to choose a good boy and settle down right now.\""
@@ -214,11 +211,15 @@ label _chai:
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
 
+    show uma happy
+
     unknown_character "It tastes exactly how the chai stand below my apartment makes it."
 
     unknown_character "The owner always calls me over by name when I walk home..."
 
     unknown_character "\"Uma!\" he says. \"Come get your evening chai!\""
+
+    show uma sad
 
     uma "..."
 
@@ -266,6 +267,8 @@ label _wipe_table:
 
     uma "...ahaha...I don\'t even remember how long it\'s been since I\'ve been away from Golu, but I miss him so much already."
 
+    show uma neutral
+
     uma "I know you probably don\'t care, but..."
 
     uma "Golu is my cat."
@@ -277,6 +280,8 @@ label _small_smile:
     show uma happy
 
     uma "Thank you. For listening to me, I mean."
+
+    show uma sad
 
     uma "It feels like it\'s been a long time since I\'ve had someone to talk to who cared, even a little bit."
 
@@ -327,17 +332,20 @@ label next:
 
     uma "..."
 
-    show uma angry
+    show uma sad
 
     uma "...most people don\'t understand."
     uma "My parents most of all."
     uma "They wanted me to have a life that I didn\'t want."
     uma "But I\'m my own person! I had a job, I lived and worked on my own."
 
-    show uma sad
+    show uma neutral
 
     uma "Even when it was hard, even when it was stressful..."
     uma "Golu was there for me when no one else was."
+
+    show uma sad
+
     uma "Even...in the end..."
 
     jump memories
@@ -363,6 +371,8 @@ label memories:
     "In the few moments before everything goes black, you hear footsteps rushing towards her from behind, hear the voices of children calling out."
 
     "Then, the memories stop, and the world fades into view again."
+
+    show uma surprised
 
     uma "I..."
 
@@ -438,9 +448,6 @@ label shake_your_head:
     uma "I think I\'ve known since the moment I got here."
     uma "It was just...a feeling I had that I couldn\'t quite place."
     uma "And now I know what it is."
-
-    show uma angry
-
     uma "I\'m...really dead..."
 
     jump realization
@@ -473,7 +480,7 @@ label realization:
 
     uma "And he...he was all I had too..."
 
-    show uma angry
+    show uma surprised
 
     uma "What\'s going to happen to him?!"
 
@@ -526,9 +533,10 @@ label choices4:
 
 label _tea_biscuits:
     "You slide a plate of tea biscuits across to her."
-    uma "...these..."
 
-    show uma sad
+    show uma surprised
+
+    uma "...these..."
 
     $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
@@ -539,8 +547,6 @@ label _tea_biscuits:
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSorrowHarmony")
 
     "Her tears subside and she reaches out and picks up a biscuit, taking a hesitant bite."
-
-    show uma surprised
 
     uma "These taste like the biscuits the chai stand owner near my apartment used to serve."
     uma "I remember...before I blacked out, I heard his voice."
@@ -555,9 +561,10 @@ label _tea_biscuits:
 
 label _toffee:
     "You place a bowl of assorted toffees in front of her, covered in colourful wrappers."
-    uma "...these..."
 
-    show uma sad
+    show uma surprised
+
+    uma "...these..."
 
     $ renpy.music.set_volume(1.0, 0.0, channel="umaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="umaSoothingMelody")
@@ -569,9 +576,10 @@ label _toffee:
 
     "Her tears subside and she reaches out and unwraps a toffee, popping it in her mouth."
 
-    show uma surprised
-
     uma "This is the brand I used to give to the neighbourhood kids..."
+
+    show uma happy
+
     uma "They were always coming to visit, to see Golu."
     uma "They loved him...almost as much as I did."
 
@@ -598,6 +606,9 @@ label _grapefruit_chips:
     "Her tears subside and she reaches out and takes a chip, placing it in her mouth."
     uma "These taste like home!"
     uma "Even after my parents gave up on me...my grandmother would still come visit."
+
+    show uma happy
+
     uma "She understood why I wanted to live the way I did. She loved Golu too."
 
     show uma sad
@@ -625,13 +636,13 @@ label end:
 
     uma "But I was wrong."
 
-    show uma happy
-
     uma "In the end, there were still people in my life who cared about me."
 
     uma "People who accepted me as I was...people who didn\'t judge my choices."
 
-    uma "People who knew and understood that Golu was the center of my world. That I would\'ve done anything for him."
+    show uma happy
+
+    uma "People who knew and understood that Golu was the centre of my world. That I would\'ve done anything for him."
 
     show uma sad
 
