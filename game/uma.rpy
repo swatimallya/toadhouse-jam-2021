@@ -185,8 +185,8 @@ label _masala_dosa:
     uma "\"Uma, you need to choose a good boy and settle down right now.\""
 
     uma "\"Uma, we want grandchildren. Your younger siblings are married. Why are you such a disappointment?\""
-
-    show uma sad
+    
+    show uma neutral
 
     uma "..."
 
@@ -308,6 +308,9 @@ label next:
     show uma neutral
 
     uma "I knew right then that I needed to take him home."
+
+    show uma happy
+
     uma "Since then, it\'s been just me and him against the world."
     uma "I would do anything for him."
 
@@ -316,9 +319,12 @@ label next:
     uma "When he was sick, I..."
     uma "I spent my full paycheck on his treatment and special food."
 
-    show uma neutral
+    show uma happy
 
     uma "I only ate Maggi noodles that whole month, but he was worth it."
+
+    show uma neutral
+
     uma "..."
 
     show uma angry
@@ -642,6 +648,9 @@ label end:
     "She smiles contentedly and closes her eyes."
 
     uma "I hope I\'ll see you again someday...Golu..."
+
+    hide uma
+    with dissolve
 
     "Her form fades away until there is nothing left."
 
