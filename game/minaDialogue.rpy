@@ -21,7 +21,7 @@ define perfectPlaceperfectTime = False
 #tea pouring
 
 label startMina:
-    "Another customers emerges from the shadow.."
+    "Another customers emerges from the shadow..."
     "He seems to be a little confused."
 menu:
     "Invite him over":
@@ -33,7 +33,7 @@ menu:
 
 label friendlyMina:
     $ perfectPlaceperfectTime = True
-    unknown "Hi there, you're parked way out in the middle of no where"
+    unknown "Hi there, you're parked way out in the middle of nowhere."
     unknown "That must be really bad for business, unless this place is really popping any time other than now."
     mina "Oh, I am Mina by the way. I don't know where I am but you seem very friendly."
     mina "I am also very hungry. I think we were meant to find each other here. Perfect time, perfect place."
@@ -78,11 +78,11 @@ menu:
         jump Starters1_Again_Mina
     "...":
         $ talkedAboutMother = True
-        mina "When I was still living with my parents, I remember feeling a lot of extra pressure"
+        mina "When I was still living with my parents, I remember feeling a lot of extra pressure."
         mina "Most of it was because they were very vocal of their expecations of me or my brothers."
         mina "My mother was \"vocal\" in her own way. She used to have this look that made me feel like a disappointment."
-        "mina sighs.."
-        mina "Anyway"
+        "Mina sighs..."
+        mina "Anyway."
         jump Starters1_Again_Mina
 
 #After "Molokheya and rice" is rejected
@@ -100,10 +100,10 @@ label Start_MTea_Mina:
     mina "I know a lot of people who grew mint at their home to have it as fresh as possible!"
     #Talks about the dad and their problem together
     mina "You know, "
-    extend "my father used to pick fresh mint from a small garden outside of his workplace" #extend is a built in character that is supposed to continue on the last line with the same character as above.
+    extend "my father used to pick fresh mint from a small garden outside of his workplace." #extend is a built in character that is supposed to continue on the last line with the same character as above.
     show mina sigh
     mina "He always had to make sure everything was done right."
-    mina "even a cup of tea with some mint"
+    mina "Even a cup of tea with some mint"
     mina "It had to be the exact amount of sugar, the exact amount of tea "
     extend "and of course the exact amount of mint."
 menu:
@@ -112,44 +112,44 @@ menu:
     "...":
         $ talkedAboutFather = True
         "You say nothing and let Mina continue."
-        mina "It felt like he wanted to control everything"
-        mina "My older brother, Thomas, was always on his side"
+        mina "It felt like he wanted to control everything."
+        mina "My older brother, Thomas, was always on his side."
         $ MentionedOlderBrotherName = True
         mina "It only seemed to have bothered me though."
-        mina "Dad was always proud of him the most, even though he always said to his friends that I'm too much like him"
-        mina "It bothered me a lot knowing that he found us similar"
-        mina "I was either as controlling as I saw him, or he didn't see himself the way I saw him"
-        mina "Well we both liked mint tea the same way that's for sure"
+        mina "Dad was always proud of him the most, even though he always said to his friends that I'm too much like him."
+        mina "It bothered me a lot knowing that he found us similar."
+        mina "I was either as controlling as I saw him, or he didn't see himself the way I saw him."
+        mina "Well we both liked mint tea the same way that's for sure."
         jump MTea_Mina
 
 #if mint tea was not selected as the first choice!
 label Start1_MTea_Mina:
-    mina "Mint tea! sounds good!"
+    mina "Mint tea! Sounds good!"
     jump MTea_Mina
 
 #This happens either way since Mina won't reject it if chosen first or later.
 label MTea_Mina:
-    "You bring out a kettle already filled with water and you place it on the stove" #heater??
+    "You bring out a kettle already filled with water and you place it on the stove." #heater??
     mina "Oh!"
     show mina remembering
     "Mina seems to have remembered something!"
     mina "That's how I used to drink it at home!"
-    mina "We had the electric kettle but we used to make tea old school on the stove" #oven????
+    mina "We had the electric kettle but we used to make tea old school on the stove." #oven????
     #remembers the resolution to him and his dad's conflict
     if talkedAboutFather:
-        mina "By we I mean me and my dad"
-        mina "This was probably the only time of the day when we didn't fight at all"
-        mina "Well, maybe we fought a little bit at the begining when I was learning, but after I got the hang of it I made the best tea for us"
-    mina "You know, I had Mint tea served at my wedding because I knew it was dad's favorite thing to drink"
-    mina "Even then though, dad didn't enjoy the tea that much"
-    mina "I remember him saying it wasn't the best he'd had"
+        mina "By we I mean me and my dad."
+        mina "This was probably the only time of the day when we didn't fight at all."
+        mina "Well, maybe we fought a little bit at the begining when I was learning, but after I got the hang of it I made the best tea for us."
+    mina "You know, I had mint tea served at my wedding because I knew it was dad's favorite thing to drink."
+    mina "Even then though, dad didn't enjoy the tea that much."
+    mina "I remember him saying it wasn't the best he'd had."
     #sfx kettle audio ringing?
     "The kettle is ready, you turn off the stove."
     #sfx tea pouring
     "You pour the water into the cup and stir the tea and add the mint."
-    mina "yum! smells great!"
-    "You present the cup to Mina"
-    "He takes a sip"
+    mina "Yum! smells great!"
+    "You present the cup to Mina."
+    "He takes a sip."
     "..."
     mina "Hold on!"
     show mina remembering
@@ -158,53 +158,53 @@ label MTea_Mina:
     mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs"
     mina "I had the kettle we used to have when I was younger, it looks like this one you have here."
     if talkedAboutFather:
-        mina "At home, we had a spot we preferred on the stove"
-    mina "I started a small fire- made sure it was safe, of course"
-    mina "And we made tea while we talked about our lives up to that point"
-    mina "He said he missed me, I had been living in a different city for a few years by then"
+        mina "At home, we had a spot we preferred on the stove."
+    mina "I started a small fire - made sure it was safe, of course."
+    mina "And we made tea while we talked about our lives up to that point."
+    mina "He said he missed me, I had been living in a different city for a few years by then."
     if talkedAboutFather:
-        mina "\"Mina,\" He said, \"I realized I was too hard to deal with too late\""
-    mina "He felt like a different person then, and whatever I felt was difficult between us just faded away"
+        mina "\"Mina,\" he said, \"I realized I was too hard to deal with too late.\""
+    mina "He felt like a different person then, and whatever I felt was difficult between us just faded away."
     show mina relaxed
-    "Mina takes a deep breath"
-    mina "I also said sorry about being mean sometimes too"
-    mina "The kettle was whistling too high by then,"
+    "Mina takes a deep breath."
+    mina "I also said sorry about being mean sometimes too."
+    mina "The kettle was whistling too high by then."
     mina "\"Oh no!\" I said, "
     extend "\"the mint! We don't have mint!\""
-    mina "He had mint in his pocket for God knows how long"
-    mina "We laughed about it and thought it would probably be expired or gone bad by then but we added it to the tea anyway"
-    mina "At the wedding the next day"
-    mina "When he told me that the mint tea wasn't the best"
-    mina "He said that the best one he had ever had was that night before"
-    mina "I am glad we talked about these things"
-    "Mina smiles at you"
+    mina "He had mint in his pocket for God knows how long."
+    mina "We laughed about it and thought it would probably be expired or gone bad by then but we added it to the tea anyway."
+    mina "At the wedding the next day."
+    mina "When he told me that the mint tea wasn't the best."
+    mina "He said that the best one he had ever had was that night before."
+    mina "I am glad we talked about these things."
+    "Mina smiles at you."
     mina "I am glad your tea reminded me of that!"
     jump FoodOptions2_Mina
 
 label Start_Beer_Mina:
     $ talkedAboutBrotherYounger = True
     mina "Oh, beer, I'm down!"
-    mina "But can I ask you something because I can't tell"
+    mina "But can I ask you something because I can't tell."
     mina "I notice the sky is dark but are we closer to midnight or to the next morning?"
 menu:
     "Shrug":
         mina "Oh you don't know too?"
         show mina sigh
-        mina "hmm"
+        mina "Hmm"
         jump Start_Beer_Mina_2
     "...":
-        mina "You really are keeping the mystery alive, Chef"
-        mina "I'll drink either way"
+        mina "You really are keeping the mystery alive, Chef."
+        mina "I'll drink either way."
         jump Start_Beer_Mina_2
 
 label Start_Beer_Mina_2:
     show mina relaxed
-    "Mina looks at the sky and he seems to have something on his mind"
-    mina "My younger brother, David, and I used to drink together more than our older brother"
-    mina "He used to do crazy things when we were all living in the same house and he rarely got in trouble"
-    mina "I did less crazy things and I always got in trouble"
-    mina "I always asked him to be more responsible but he never listened"
-    mina "I tried to cover for him some times but I don't think he noticed"
+    "Mina looks at the sky and he seems to have something on his mind."
+    mina "My younger brother, David, and I used to drink together more than our older brother."
+    mina "He used to do crazy things when we were all living in the same house and he rarely got in trouble."
+    mina "I did less crazy things and I always got in trouble."
+    mina "I always asked him to be more responsible but he never listened."
+    mina "I tried to cover for him some times but I don't think he noticed."
     jump Beer_Mina
 
 label Start1_Beer_Mina:
@@ -212,13 +212,13 @@ label Start1_Beer_Mina:
     jump Beer_Mina
 
 label Beer_Mina:
-    "You grab a really big mug from under the counter"
-    mina "wow"
-    "You start pouring the beer from the barrel inside the cart"
+    "You grab a really big mug from under the counter."
+    mina "Wow."
+    "You start pouring the beer from the barrel inside the cart."
     mina "So, why won't you have one too while you're at it?"
     "..."
     mina "Alright!"
-    "You present the mug to Mina"
+    "You present the mug to Mina."
     "He grabs it and chugs it all in one go!"
     mina "Heyy!"
     show mina remembering
@@ -227,38 +227,38 @@ label Beer_Mina:
         mina "David! "
     else:
         mina "My younger brother! "
-    extend "When I was moving to a different city, we stayed up the whole night before in the balcony"
-    mina "I think I was quicker to get tipsy"
-    mina "I remember we never shouted but our conversation got intense"
-    mina "I was out of line but I asked him to be more responsible when I leave"
-    mina "He asked me what I meant and I think I said things I didn't think through"
-    mina "He told me that out of me and our older brother I was more like dad"
+    extend "When I was moving to a different city, we stayed up the whole night before in the balcony."
+    mina "I think I was quicker to get tipsy."
+    mina "I remember we never shouted but our conversation got intense."
+    mina "I was out of line but I asked him to be more responsible when I leave."
+    mina "He asked me what I meant and I think I said things I didn't think through."
+    mina "He told me that out of me and our older brother I was more like dad."
     show mina sigh
     mina "..."
-    mina "I didn't like that"
-    mina "I think me and him had the same issues with dad, he was too distant and acted like he knew us"
-    mina "I realized that I did the same thing with him"
+    mina "I didn't like that."
+    mina "I think me and him had the same issues with dad, he was too distant and acted like he knew us."
+    mina "I realized that I did the same thing with him."
     mina "I immediately apologized!"
-    mina "I explained to him the way I saw it in my head and how I felt that I had to take care of him"
+    mina "I explained to him the way I saw it in my head and how I felt that I had to take care of him."
     mina "And how I thought I was protecting him from the rest of the family because "
-    extend "I saw the \"real\" them"
+    extend "I saw the \"real\" them."
     if talkedAboutBrotherYounger:
-        mina "But I realized David was always doing better than me mentally"
-        mina "I had to ask him what his secret was"
-    mina "He told me I didn't have to do all these mental gymnastics"
-    mina "\"You spent too much time worrying about me\" He said"
-    mina "\"Worrying about everyon else but you\""
-    mina "\"Whatever you were doing to pretend they weren't also a part of my life\" He said"
-    mina "\"It only made you another character I had to find a way around\""
-    mina "He said that he noticed all the small things about the rest of the family"
-    mina "And he gave them what they wanted"
-    mina "He said I needed to feel like I was in control just like dad"
-    mina "But sometimes I needed to feel the opposite of that"
-    mina "For some reason, David seemed to have developed a very flexible character"
-    mina "He didn't lie to anyone about who he was but he knew what we needed and gave it to us"
-    mina "I learned a lot on that day"
-    mina "I started watching my behaviour and focusing on the people around me and tried not to be a heavy weight on their hearts"
-    mina "Thank you for the beer"
+        mina "But I realized David was always doing better than me mentally."
+        mina "I had to ask him what his secret was."
+    mina "He told me I didn't have to do all these mental gymnastics."
+    mina "\"You spent too much time worrying about me,\" he said."
+    mina "\"Worrying about everyone else but you.\""
+    mina "\"Whatever you were doing to pretend they weren't also a part of my life,\" he said."
+    mina "\"It only made you another character I had to find a way around.\""
+    mina "He said that he noticed all the small things about the rest of the family."
+    mina "And he gave them what they wanted."
+    mina "He said I needed to feel like I was in control just like dad."
+    mina "But sometimes I needed to feel the opposite of that."
+    mina "For some reason, David seemed to have developed a very flexible character."
+    mina "He didn't lie to anyone about who he was but he knew what we needed and gave it to us."
+    mina "I learned a lot on that day."
+    mina "I started watching my behaviour and focusing on the people around me and tried not to be a heavy weight on their hearts."
+    mina "Thank you for the beer!"
     jump FoodOptions2_Mina
 
 label FoodOptions2_Mina:
@@ -272,46 +272,46 @@ menu:
         jump FoodOptions2_Koshary
 
 label FoodOptions2_MolokheyaAndRice:
-    "You start preparing the dish"
-    "Preparing the rice, curshing Molokheya leaves and getting the soup ready"
-    mina "We had two versions of this dish at home"
-    mina "We usually eat vegetarian for two thirds of the year, you seem to be doing that version"
-    mina "It reminds me a lot of the time after I quit my first job and went back home for a while"
+    "You start preparing the dish."
+    "Preparing the rice, curshing Molokheya leaves and getting the soup ready."
+    mina "We had two versions of this dish at home."
+    mina "We usually eat vegetarian for two thirds of the year, you seem to be doing that version."
+    mina "It reminds me a lot of the time after I quit my first job and went back home for a while."
     if talkedAboutMother:
         show mina sigh
-        mina "Mom still had that look that made me feel like I did something wrong"
-        mina "I don't even think she knew what I did at my work"
-        mina "But she still expressed her \"disappointment\" or whatever"
+        mina "Mom still had that look that made me feel like I did something wrong."
+        mina "I don't even think she knew what I did at my work."
+        mina "But she still expressed her \"disappointment\" or whatever."
     #sfx something is finished
     "The dish is done!"
-    "Your pour the Molokheya in the rice and present it to Mina"
-    mina "aah! smells great!"
-    "Mina starts eating the dish"
+    "Your pour the Molokheya in the rice and present it to Mina."
+    mina "Aah! smells great!"
+    "Mina starts eating the dish."
     show mina remembering
     mina "I remember something!"
-    mina "The first few days after I was back, there was some tension between me and mom"
+    mina "The first few days after I was back, there was some tension between me and mom."
     if talkedAboutMother:
-        mina "She kept asking what was my next opportunity"
-        mina "\"So you just left without having a plan?\" She asked"
-        mina "\"I couldn't stay any longer, it was very draining\" I replied"
-    mina "She said that I let go of good opportunities really quickly"
-    mina "\"You have to learn how to take a punch, you're being too soft\""
-    mina "I left the dinner table and went to my room"
-    mina "It felt like I was in my teens again"
-    mina "Only this time, I was the one that quickly got out again and asked her to talk"
-    mina "I had decided this time to sit and listen very carefuly and not let anything get on my nerve"
+        mina "She kept asking what was my next opportunity."
+        mina "\"So you just left without having a plan?\" she asked."
+        mina "\"I couldn't stay any longer, it was very draining,\" I replied."
+    mina "She said that I let go of good opportunities really quickly."
+    mina "\"You have to learn how to take a punch, you're being too soft.\""
+    mina "I left the dinner table and went to my room."
+    mina "It felt like I was in my teens again."
+    mina "Only this time, I was the one that quickly got out again and asked her to talk."
+    mina "I had decided this time to sit and listen very carefuly and not let anything get on my nerves."
     mina "I asked my brothers to give us sometime and my dad had already headed to bed."
-    mina "She began everything by talking about my choices and how she thinks they were wrong"
-    mina "I let her finish and I asked her if she ever regretted a choice"
-    mina "I told her that I took my choices knowing that they might cost me better things"
-    mina "I still do not reget them"
-    mina "She opened up about the things she gave up in her life"
-    mina "Painting, promotions, even driving"
-    mina "She said that she always picked the safest options and it made sense to her"
-    mina "But at the same time she felt regret"
-    mina "I think we ended up agreeing to support each other's crazy decisions more than the safe ones"
-    mina "Which made sense then but I think it shouldn't apply to every decision"
-    mina "However, I remember now that she went back to painting and she got her driving license after she retired"
+    mina "She began everything by talking about my choices and how she thinks they were wrong."
+    mina "I let her finish and I asked her if she ever regretted a choice."
+    mina "I told her that I took my choices knowing that they might cost me better things."
+    mina "I still do not reget them."
+    mina "She opened up about the things she gave up in her life."
+    mina "Painting, promotions, even driving."
+    mina "She said that she always picked the safest options and it made sense to her."
+    mina "But at the same time she felt regret."
+    mina "I think we ended up agreeing to support each other's crazy decisions more than the safe ones."
+    mina "Which made sense then but I think it shouldn't apply to every decision."
+    mina "However, I remember now that she went back to painting and she got her driving license after she retired."
     mina "I was very happy for her!"
     mina "Thank you for the meal!"
     jump Ending_Mina
@@ -320,90 +320,94 @@ label FoodOptions2_Koshary:
     $ talkedAboutBrotherOlder = True
     mina "Koshary, a really messy dish! "
     extend "But it's exciting!"
-    mina "When I was younger, I used to eat it every Friday after church"
+    mina "When I was younger, I used to eat it every Friday after church."
     if MentionedOlderBrotherName:
-        mina "Thomas, my older brother, always tagged along"
+        mina "Thomas, my older brother, always tagged along."
     else:
-        mina "My older brother, always tagged along"
-        mina "His name is Thomas, by the way"
-    mina "My younger brother, David, didn't like it at all"
-    mina "It's too much for the stomach to handle"
-    mina "I'm sure you know, chef"
+        mina "My older brother, always tagged along."
+        mina "His name is Thomas, by the way."
+    mina "My younger brother, David, didn't like it at all."
+    mina "It's too much for the stomach to handle."
+    mina "I'm sure you know, chef."
     "You don't know."
-    "That doesn't stop you from making the best koshary dish"
+    "That doesn't stop you from making the best Koshary dish"
     mina "I can't wait to taste this one"
-    mina "Something about Koshary in Egypt, you just never know what you'll get at each place"
-    mina "It always tasted a little different at every place that made it"
+    mina "Something about Koshary in Egypt, you just never know what you'll get at each place."
+    mina "It always tasted a little different at every place that made it."
     mina "Even the same chain of restaurants."
-    "You prepare the pasta, lentils, rice, chickpeas and salsa"
-    "-and of course the fry the onions"
+    "You prepare the pasta, lentils, rice, chickpeas and salsa."
+    "-and of course the fry the onions."
     show mina sigh
     if talkedAboutFather:
-        mina "He was of course gentler than dad in many ways"
-        mina "But he still tried to make sense of dad's control over us"
+        mina "He was of course gentler than dad in many ways."
+        mina "But he still tried to make sense of dad's control over us."
     if talkedAboutMother:
-        mina "He wasn't telling us he was disappointed"
-        mina "But he was always silent when mom did that"
-    mina "It felt like he thought he was the guardian of his younger siblings"
-    mina "But in reality it felt like he was a lieutenant to the parents"
+        mina "He wasn't telling us he was disappointed."
+        mina "But he was always silent when mom did that."
+    mina "It felt like he thought he was the guardian of his younger siblings."
+    mina "But in reality it felt like he was a lieutenant to the parents."
     "Koshary is finally done!"
-    "You put everything in one dish"
+    "You put everything in one dish."
     show mina neutral
     mina "Let's dive in!"
-    "Mina grabs the dish and starts eating"
+    "Mina grabs the dish and starts eating."
     mina "Heyy!"
     show mina remembering
     mina "It was at some time of the year when we were fasting"
-    extend "-only eat vegetarian food"
-    mina "Thomas visited me at my new home to say hi"
-    mina "He asked to take me out for Koshary"
-    mina "We went out to one of the good Koshary places"
-    mina "\"Mina,\" He said, \"I want to apologize\""
-    mina "I wondered what he meant with that"
-    mina "Turns out he felt guitly for all the time of us at home"
-    mina "He says he should have been a better brother"
-    mina "\"Are you doing this again?\" I asked "
-    extend "\"You're being hard on yourself again\""
-    mina "I told him that me and David already knew that he was as hard on himself as he was on us"
+    extend "-only eating vegetarian food."
+    mina "Thomas visited me at my new home to say hi."
+    mina "He asked to take me out for Koshary."
+    mina "We went out to one of the good Koshary places."
+    mina "\"Mina,\" he said, \"I want to apologize.\""
+    mina "I wondered what he meant with that."
+    mina "Turns out he felt guilty for all the time of us at home."
+    mina "He says he should have been a better brother."
+    mina "\"Are you doing this again?\" I asked. "
+    extend "\"You're being hard on yourself again.\""
+    mina "I told him that me and David already knew that he was as hard on himself as he was on us."
     mina "I said that we were waiting for him to realize it. We thought that since we did he should've already done it."
-    mina "\"I think in a way I'm the youngest then\" He said"
-    mina "He wasn't"
+    mina "\"I think in a way I'm the youngest then,\" he said."
+    mina "He wasn't."
     mina "But I agreed cause I wanted him to feel good!"
-    mina "To be fair, David told me that about Thomas but I didn't believe it"
-    mina "I only believed it when I heard it from him and I'm glad I did"
+    mina "To be fair, David told me that about Thomas but I didn't believe it."
+    mina "I only believed it when I heard it from him and I'm glad I did."
     mina "Thank you for the meal!"
     jump Ending_Mina
 
 label Ending_Mina:
     show mina neutral
     mina "I think that's it huh?"
-    mina "I don't think I figured out where we are still"
-    mina "But I'm glad I ran into you"
-    mina "I hope I wasn't rambling for too long. For some reason, I just feel like opening up about my life"
-    mina "I never got to hear your story"
+    mina "I don't think I figured out where we are still."
+    mina "But I'm glad I ran into you."
+    mina "I hope I wasn't rambling for too long. For some reason, I just feel like opening up about my life."
+    mina "I never got to hear your story."
     mina "Maybe let's take it from now and move backwards, how did you get here?"
     "..."
-    mina "Wait, why did you get here might be more important"
+    mina "Wait, why did you get here might be more important."
     mina "This place seems so far from the city, are you sure this is good for business?"
     mina "It's a little odd of me asking this, but what is the city in the back?"
-    mina "My head is so foggy, I can't remember how the day even started today"
+    mina "My head is so foggy, I can't remember how the day even started today."
     show mina sigh
-    mina "Hey.. I keep getting these flashes of a farm"
-    mina "It's weird though, I see people that look like my family but they're much younger"
+    mina "Hey...I keep getting these flashes of a farm."
+    mina "It's weird though, I see people that look like my family but they're much younger."
     mina "..."
     show mina remembering
     mina "They're my kids! And my grandkids!"
-    mina "You're saying I lived long enough to meet all of them"
-    mina "I had a farm and I grew old in it with my loved ones"
-    mina "I made sure I didn't repeat my same mistakes or the mistakes my family has done"
+    mina "You're saying I lived long enough to meet all of them."
+    mina "I had a farm and I grew old in it with my loved ones."
+    mina "I made sure I didn't repeat my same mistakes or the mistakes my family has done."
     show mina neutral
-    mina "I made new ones"
+    mina "I made new ones."
     show mina relaxed
-    mina "Thank you for showing me my life"
-    mina "I went out surrounded by love and understanding"
-    mina "Whatever your job is, you're doing great"
+    mina "Thank you for showing me my life."
+    mina "I went out surrounded by love and understanding."
+    mina "Whatever your job is, you're doing great."
     "He smiles and closes his eyes."
     if perfectPlaceperfectTime:
-        mina "Perfect place, perfect time"
+        mina "Perfect place, perfect time."
+
+    hide mina
+    with dissolve
+
     "His form fades away until there is nothing left."
     return
