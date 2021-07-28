@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("toadhousejam2021")
+define config.name = _("One Last Meal")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -30,14 +30,21 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-""")
+{font=fonts/Kingthings Organica.ttf}{size=34}Writer, Background Artist & Story Programmer{/size}
+{vspace=10}{size=26}{image=flower.png} Nader Youssef (mickehh){/font}
+
+{font=fonts/Kingthings Organica.ttf}{size=34}Writer, Character Artist & Story Programmer{/size}
+{vspace=10}{size=26}{image=flower.png} Swati Mallya (makkurataichou){/font}
+
+{font=fonts/Kingthings Organica.ttf}{size=34}Composer, Sound Designer & Audio Programmer{/size}
+{vspace=10}{size=26}{image=flower.png} Maskedsound{/font}\n\n""")
 
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "toadhousejam2021"
+define build.name = "onelastmeal"
 
 
 ## Sounds and music ############################################################
