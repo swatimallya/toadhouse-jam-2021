@@ -1,5 +1,9 @@
 define unknown_character = Character(_("???"), color="FFFFFF")
 
+#-----death art----
+#death neutral
+#death smug
+
 label intro:
     "You open your eyes to an unfamiliar place."
     
@@ -34,8 +38,12 @@ label _continue:
     unknown_character "For now, all you need to worry about...is this!"
     
     "They hand you an apron and gesture towards a nearby food stall."
+
+    show death smug
     
     unknown_character "You could say I\'m in the business of providing services to people."
+
+    show death neutral
     
     unknown_character "Recently, I decided to try diving into food service specifically."
     
@@ -43,7 +51,11 @@ label _continue:
     
     unknown_character "I needed to make sure I got someone I could form a, uh..."
     
+    show death smug
+
     unknown_character "Mutually beneficial relationship with."
+
+    show death neutral
     
     unknown_character "And you seemed like the perfect fit!"
     
@@ -63,8 +75,13 @@ label _how:
     jump help
 
 label _who:
+
+    show death smug
+
     unknown_character "Another thing you\'ll find out in due time, I\'m afraid."
     
+    show death neutral
+
     unknown_character "But we won\'t be getting anyone violent or hostile, I can assure you of that. If it helps."
     
     jump help
@@ -81,15 +98,23 @@ label help:
             jump _tell_me_more
 
 label _yes:
+
+    show death smug 
+
     unknown_character "Great!"
     
     jump bye
 
 label _no_way:
+
+    show death smug
+
     unknown_character "Suspicious? {i}Me?{i}"
     
     unknown_character "Well. I suppose I can see that, seeing as you have no idea where you are or who I am or why you have this job."
     
+    show death neutral
+
     unknown_character "But just trust me, this is all for a good cause."
     
     unknown_character "Try serving one person, and then we can see how you feel, hm?"
@@ -97,6 +122,9 @@ label _no_way:
     jump bye
 
 label _tell_me_more:
+
+    show death smug
+
     unknown_character "Persistent {i}and{/i} curious."
     
     unknown_character "If our conversation so far is any indication, you\'ll start to get some answers as you serve some customers."
@@ -106,6 +134,9 @@ label _tell_me_more:
     jump bye
 
 label bye:
+
+    show death neutral
+
     unknown_character "Well, then, I\'ll just get out of your way."
     
     unknown_character "But I\'ll be close by, if you need me."
