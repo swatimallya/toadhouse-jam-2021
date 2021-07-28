@@ -569,7 +569,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("{font=fonts/Kingthings Organica.ttf}{size=26}Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]{/size}{/font}")
+            text _("{font=fonts/Gidole-Regular.ttf}{size=26}Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]{/size}{/font}")
 
 
 style about_label is gui_label

@@ -31,13 +31,19 @@ define config.version = "1.0"
 
 define gui.about = _p("""
 {font=fonts/Kingthings Organica.ttf}{size=34}Writer, Background Artist & Story Programmer{/size}
-{vspace=10}{size=26}{image=flower.png} Nader Youssef (mickehh){/font}
+{vspace=10}{size=26}{image=flower.png} Nader Youssef (mickehh){/size}
 
-{font=fonts/Kingthings Organica.ttf}{size=34}Writer, Character Artist & Story Programmer{/size}
-{vspace=10}{size=26}{image=flower.png} Swati Mallya (makkurataichou){/font}
+{size=34}Writer, Character Artist & Story Programmer{/size}
+{vspace=10}{size=26}{image=flower.png} Swati Mallya (makkurataichou){/size}
 
-{font=fonts/Kingthings Organica.ttf}{size=34}Composer, Sound Designer & Audio Programmer{/size}
-{vspace=10}{size=26}{image=flower.png} Maskedsound{/font}\n\n""")
+{size=34}Composer, Sound Designer & Audio Programmer{/size}
+{vspace=10}{size=26}{image=flower.png} Maskedsound{/size}
+
+{size=36}Fonts{/size}
+{size=26}{vspace=5}{a=https://www.dafont.com/kingthings.d781}Kevin King{/a}{/size}
+{size=26}{vspace=5}{a=https://www.dafont.com/draghia-cornel.d3051}Draghia Cornel{/a}{/size}
+{size=26}{vspace=5}{a=https://www.dafont.com/andreas-larsen.d5848}Andreas Larsen{/a}{/size}
+{vspace=10}{/font}""")
 
 
 ## A short name for the game used for executables and directories in the built
