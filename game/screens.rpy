@@ -23,6 +23,7 @@ style hyperlink_text:
 
 style gui_text:
     properties gui.text_properties("interface")
+    yalign 1.0
 
 
 style button:
@@ -374,9 +375,15 @@ screen main_menu():
 
             text "[config.name!t]":
                 style "main_menu_title"
+                xpos 110
+                ypos -420
+                xalign 0.5
+                yalign 0.5
 
             text "[config.version]":
                 style "main_menu_version"
+                ypos -480
+                xpos 480
 
 
 style main_menu_frame is empty
@@ -526,9 +533,8 @@ style game_menu_label:
     ysize 120
 
 style game_menu_label_text:
-    size gui.title_text_size
+    size gui.menu_title_text_size
     color gui.accent_color
-    yalign 0.5
 
 style return_button:
     xpos gui.navigation_xpos
@@ -563,7 +569,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("{font=fonts/Gidole-Regular.ttf}{size=26}Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]{/size}{/font}")
 
 
 style about_label is gui_label
