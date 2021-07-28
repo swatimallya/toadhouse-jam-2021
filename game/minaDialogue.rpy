@@ -118,6 +118,7 @@ menu:
         mina "When I was still living with my parents, I remember feeling a lot of extra pressure."
         mina "Most of it was because they were very vocal of their expecations of me or my brothers."
         mina "My mother was \"vocal\" in her own way. She used to have this look that made me feel like a disappointment."
+        show mina sigh
         "Mina sighs..."
         mina "Anyway."
         jump Starters1_Again_Mina
@@ -220,7 +221,7 @@ label MTea_Mina:
     "..."
     mina "Hold on!"
     show mina remembering
-    extend "I remember!"
+    extend " I remember!"
     stop ambience fadeout 1.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
@@ -409,6 +410,7 @@ label FoodOptions2_MolokheyaAndRice:
     play sound plate2 volume 1.0
     "The dish is done!"
     "Your pour the Molokheya in the rice and present it to Mina."
+    show mina neutral
     mina "Aah! smells great!"
     "Mina starts eating the dish."
     show mina remembering
@@ -423,13 +425,14 @@ label FoodOptions2_MolokheyaAndRice:
         mina "She kept asking what was my next opportunity."
         mina "\"So you just left without having a plan?\" she asked."
         mina "\"I couldn't stay any longer, it was very draining,\" I replied."
+    show mina sigh
     mina "She said that I let go of good opportunities really quickly."
     mina "\"You have to learn how to take a punch, you're being too soft.\""
     mina "I left the dinner table and went to my room."
     mina "It felt like I was in my teens again."
     mina "Only this time, I was the one that quickly got out again and asked her to talk."
     mina "I had decided this time to sit and listen very carefuly and not let anything get on my nerves."
-    mina "I asked my brothers to give us sometime and my dad had already headed to bed."
+    mina "I asked my brothers to give us some time and my dad had already headed to bed."
     mina "She began everything by talking about my choices and how she thinks they were wrong."
     mina "I let her finish and I asked her if she ever regretted a choice."
     mina "I told her that I took my choices knowing that they might cost me better things."
@@ -438,6 +441,7 @@ label FoodOptions2_MolokheyaAndRice:
     mina "Painting, promotions, even driving."
     mina "She said that she always picked the safest options and it made sense to her."
     mina "But at the same time she felt regret."
+    show mina remembering
     mina "I think we ended up agreeing to support each other's crazy decisions more than the safe ones."
     mina "Which made sense then but I think it shouldn't apply to every decision."
     mina "However, I remember now that she went back to painting and she got her driving license after she retired."
@@ -525,11 +529,13 @@ label Ending_Mina:
     show mina neutral
     mina "I think that's it huh?"
     mina "I don't think I figured out where we are still."
+    show mina relaxed
     mina "But I'm glad I ran into you."
     mina "I hope I wasn't rambling for too long. For some reason, I just feel like opening up about my life."
     mina "I never got to hear your story."
     mina "Maybe let's take it from now and move backwards, how did you get here?"
     "..."
+    show mina neutral
     mina "Wait, why did you get here might be more important."
     mina "This place seems so far from the city, are you sure this is good for business?"
     mina "It's a little odd of me asking this, but what is the city in the back?"
@@ -547,6 +553,7 @@ label Ending_Mina:
     mina "They're my kids! And my grandkids!"
     mina "You're saying I lived long enough to meet all of them."
     mina "I had a farm and I grew old in it with my loved ones."
+    show mina sigh
     mina "I made sure I didn't repeat my same mistakes or the mistakes my family has done."
     show mina neutral
     mina "I made new ones."
