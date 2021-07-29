@@ -11,6 +11,7 @@ define MentionedOlderBrotherName = False
 define perfectPlaceperfectTime = False
 
 define audio.oceanAmbience = "audio/OceanAmbience.ogg"
+define audio.gardenAmbience = "audio/GardenAmbience.ogg"
 define audio.plate = "audio/Plate.ogg"
 define audio.plate2 = "audio/Plate2.ogg"
 define audio.cooking = "audio/Cooking.ogg"
@@ -207,11 +208,9 @@ label MTea_Mina:
     mina "You know, I had mint tea served at my wedding because I knew it was dad's favorite thing to drink."
     mina "Even then though, dad didn't enjoy the tea that much."
     mina "I remember him saying it wasn't the best he'd had."
-    #sfx kettle audio ringing?
     play sound kettle volume 1.0
     queue sound stoveOff volume 1.0
     "The kettle is ready, you turn off the stove."
-    #sfx tea pouring
     play sound pouring volume 1.0
     queue sound cupstir volume 1.0
     "You pour the water into the cup and stir the tea and add the mint."
@@ -228,6 +227,7 @@ label MTea_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
+    play ambience gardenAmbience fadein 1.0 volume 0.4
 
     mina "The night before the wedding! Dad came over to my house and we stayed in the garden outside."
     mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs."
@@ -241,6 +241,7 @@ label MTea_Mina:
         mina "\"Mina,\" he said, \"I realized I was too hard to deal with too late.\""
     mina "He felt like a different person then, and whatever I felt was difficult between us just faded away."
     show mina relaxed
+    stop ambience fadeout 1.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
@@ -259,7 +260,6 @@ label MTea_Mina:
     mina "I am glad we talked about these things."
     "Mina smiles at you."
     mina "I am glad your tea reminded me of that!"
-
     play ambience oceanAmbience fadein 1.0 volume 0.2
     jump FoodOptions2_Mina
 

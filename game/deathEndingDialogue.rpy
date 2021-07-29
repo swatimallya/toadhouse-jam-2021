@@ -2,16 +2,24 @@ define death = Character(_("Death"), color="6B8E23")
 
 define likedTheJob = False
 
+define audio.oceanAmbience = "audio/OceanAmbience.ogg"
+define audio.mainTheme = "audio/MainTheme.ogg"
+
+
+init python:
+    renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+
 #-----death art----
 #death neutral
 #death smug
 
-#Death has done this many times before. 
+#Death has done this many times before.
 #Death knows the chef's past
 #It's their job to take souls to the other side and they give as much time as possible to the dead.
 #Death is giving the chef something they need to find closure just how the chef was giving the customers
 
 label death_ending:
+    play music mainTheme fadein 1.0
     "What now?"
     "You check to see if there are any more customers on their way to you."
     "..."
@@ -71,7 +79,7 @@ label theDeal:
     death "Some find it by"
     extend " listening."
     show death neutral
-    death "They come with..." 
+    death "They come with..."
     extend " unresolved situations."
     death "Let's say for example, someone who is conflicted over what they believe and how they feel."
     death "\"People only want what's best for them\" and yet they themselves go out of their way to help others."
@@ -191,7 +199,7 @@ label end1_Stay:
     death "See you around, chef."
 
     return
-    
+
 label end2_MoveOn:
     show death neutral
     death "I'm glad you feel this way."
@@ -208,5 +216,8 @@ label end2_MoveOn:
     "Your form starts fading away."
     "The world around you is changing."
     "Onward you go."
+
+    stop ambience fadeout 1.0
+    stop music fadeout 1.0
 
     return
