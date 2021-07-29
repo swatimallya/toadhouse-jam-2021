@@ -55,10 +55,10 @@ label startMina:
     "Another customer emerges from the shadow..."
     "He seems to be a little confused."
 menu:
-    "Invite him over":
+    "Invite him over.":
         show mina neutral
         jump friendlyMina
-    "Wait for him to come":
+    "Wait for him to come.":
         show mina neutral
         jump realxedMina
 
@@ -81,11 +81,11 @@ label Stage1Mina:
     mina "So what are you offering?"
     "What should Mina start with?"
 menu:
-    "Tea with mint":
+    "Tea with mint.":
         jump Start_MTea_Mina
-    "Beer":
+    "Beer.":
         jump Start_Beer_Mina
-    "Molokheya and Rice":
+    "Molokheya and rice.":
         jump Starter_MRice_Mina
 
 #if (Molokheya and rice) is selected as the first choice! (More info about the mom) and also, Mina won't accept it.
@@ -103,7 +103,7 @@ label Starter_MRice_Mina:
     mina "I sometimes got it from restaurants because I would hang out with friends."
     mina "But none of these ones tasted as good as the one at home."
 menu:
-    "Offer a different starter":
+    "Offer a different starter.":
         mina "Oh, yeah. Time for the starter!"
         jump Starters1_Again_Mina
     "...":
@@ -111,7 +111,7 @@ menu:
         mina "I think I learned to be hard on myself just observing her"
         mina "but whenever I notice myself doing that, I stop."
 menu:
-    "Offer a different starter":
+    "Offer a different starter.":
         jump Starters1_Again_Mina
     "...":
         $ talkedAboutMother = True
@@ -132,9 +132,9 @@ label Starters1_Again_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     "Remind me again what can I have?"
 menu:
-    "Tea with mint":
+    "Tea with mint.":
         jump Start1_MTea_Mina
-    "Beer":
+    "Beer.":
         jump Start1_Beer_Mina
 
 #if Mint tea was selected as the first choice! (More info about the dad)
@@ -160,7 +160,7 @@ label Start_MTea_Mina:
     mina "It had to be the exact amount of sugar, the exact amount of tea "
     extend "and of course the exact amount of mint."
 menu:
-    "Prepare the tea":
+    "Prepare the tea.":
         jump MTea_Mina
     "...":
         $ talkedAboutFather = True
@@ -275,7 +275,7 @@ label Start_Beer_Mina:
     mina "But can I ask you something because I can't tell."
     mina "I notice the sky is dark but are we closer to midnight or to the next morning?"
 menu:
-    "Shrug":
+    "Shrug.":
         mina "Oh you don't know too?"
         show mina sigh
         mina "Hmm"
@@ -385,9 +385,9 @@ label FoodOptions2_Mina:
     mina "So Chef, what do you have next?"
     "What dish are you gonna offer Mina?"
 menu:
-    "Molokheya and Rice":
+    "Molokheya and rice.":
         jump FoodOptions2_MolokheyaAndRice
-    "Koshary":
+    "Koshary.":
         jump FoodOptions2_Koshary
 
 label FoodOptions2_MolokheyaAndRice:
