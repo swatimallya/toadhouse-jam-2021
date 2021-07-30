@@ -10,7 +10,7 @@ init python:
 #death smug
 
 label intro:
-    play ambience oceanAmbience fadein 1.0 volume 0.2
+    play ambience oceanAmbience fadein 2.0 volume 0.2
     play music mainTheme fadein 1.0
 
     "You open your eyes to an unfamiliar place."
@@ -48,23 +48,23 @@ label _continue:
     "They hand you an apron and gesture towards a nearby food stall."
 
     show death smug
-    
+
     unknown_character "You could say I\'m in the business of providing services to people."
 
     show death neutral
-    
+
     unknown_character "Recently, I decided to try diving into food service specifically."
 
     unknown_character "I have my hands full managing the logistics, though, so I thought I\'d hire a chef to mind a food stall for me."
 
     unknown_character "I needed to make sure I got someone I could form a, uh..."
-    
+
     show death smug
 
     unknown_character "Mutually beneficial relationship with."
 
     show death neutral
-    
+
     unknown_character "And you seemed like the perfect fit!"
 
     unknown_character "It\'s a simple job, don\'t worry - all you have to do is serve customers food that they like. Easy enough!"
@@ -87,7 +87,7 @@ label _who:
     show death smug
 
     unknown_character "Another thing you\'ll find out in due time, I\'m afraid."
-    
+
     show death neutral
 
     unknown_character "But we won\'t be getting anyone violent or hostile, I can assure you of that. If it helps."
@@ -107,7 +107,7 @@ label help:
 
 label _yes:
 
-    show death smug 
+    show death smug
 
     unknown_character "Great!"
 
@@ -120,7 +120,7 @@ label _no_way:
     unknown_character "Suspicious? {i}Me?{i}"
 
     unknown_character "Well. I suppose I can see that, seeing as you have no idea where you are or who I am or why you have this job."
-    
+
     show death neutral
 
     unknown_character "But just trust me, this is all for a good cause."

@@ -217,7 +217,7 @@ label end2_MoveOn:
     "The world around you is changing."
     "Onward you go."
 
-    stop ambience fadeout 1.0
+    stop ambience fadeout 2.0
     stop music fadeout 1.0
 
     return
