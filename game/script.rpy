@@ -16,6 +16,7 @@ label start:
     #scene bg street #original was too big
     #scene background
     scene bg street
+    with dissolve
     call intro from _call_intro
     call uma_story from _call_uma_story
     call interlude from _call_interlude
