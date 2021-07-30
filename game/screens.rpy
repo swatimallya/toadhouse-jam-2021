@@ -373,17 +373,12 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
-                xpos 110
-                ypos -420
-                xalign 0.5
-                yalign 0.5
-
             text "[config.version]":
                 style "main_menu_version"
-                ypos -480
-                xpos 480
+                ypos 50
+                xpos 30
+                xalign 1.0
+                yalign 1.0
 
 
 style main_menu_frame is empty
