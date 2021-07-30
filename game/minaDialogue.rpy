@@ -221,13 +221,13 @@ label MTea_Mina:
     mina "Hold on!"
     show mina remembering
     extend " I remember!"
-    stop ambience fadeout 1.0
+    stop ambience fadeout 2.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    play ambience gardenAmbience fadein 1.0 volume 0.4
+    play ambience gardenAmbience fadein 1.5 volume 0.4
 
     mina "The night before the wedding! Dad came over to my house and we stayed in the garden outside."
     mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs."
@@ -241,7 +241,7 @@ label MTea_Mina:
         mina "\"Mina,\" he said, \"I realized I was too hard to deal with too late.\""
     mina "He felt like a different person then, and whatever I felt was difficult between us just faded away."
     show mina relaxed
-    stop ambience fadeout 1.0
+    stop ambience fadeout 2.0
     $ renpy.music.set_volume(1.0, 0.0, channel="minaDrums")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
@@ -260,7 +260,7 @@ label MTea_Mina:
     mina "I am glad we talked about these things."
     "Mina smiles at you."
     mina "I am glad your tea reminded me of that!"
-    play ambience oceanAmbience fadein 1.0 volume 0.2
+    play ambience oceanAmbience fadein 2.0 volume 0.2
     jump FoodOptions2_Mina
 
 label Start_Beer_Mina:

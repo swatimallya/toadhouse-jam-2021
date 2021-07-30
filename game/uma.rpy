@@ -364,9 +364,9 @@ label memories:
 
     uma "Urgh...I...in the end...?"
 
-    stop ambience fadeout 1.0
+    stop ambience fadeout 2.0
 
-    play sound streetAmbience volume 1.0
+    play sound streetAmbience volume 1.5
 
     "You see a woman waving goodbye to the owner of a food stall."
 
@@ -378,7 +378,7 @@ label memories:
 
     show uma surprised
 
-    play ambience oceanAmbience fadein 1.0 volume 0.2
+    play ambience oceanAmbience fadein 2.0 volume 0.2
 
     uma "I..."
 
