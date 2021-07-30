@@ -59,7 +59,16 @@ menu:
 
 label question1_entertainment:
     death "Sure!"
+    show death neutral zorder 2
+    show mina relaxed at right zorder 1
+    with dissolve
+    show uma happy at left zorder 1
+    with dissolve
     death "You got to see how it can go with Uma and Mina."
+    hide mina
+    with dissolve
+    hide uma
+    with dissolve
     death "I get to do that but imagine more people, heh"
     extend ", from all over the world."
     death "{i}Very{i} entertaining."

@@ -43,8 +43,10 @@ define gui.about = _p("""
 {size=26}{vspace=5}{a=https://www.dafont.com/kingthings.d781}Kevin King{/a}{/size}
 {size=26}{vspace=5}{a=https://www.dafont.com/draghia-cornel.d3051}Draghia Cornel{/a}{/size}
 {size=26}{vspace=5}{a=https://www.dafont.com/andreas-larsen.d5848}Andreas Larsen{/a}{/size}
-{vspace=10}{/font}""")
+{vspace=10}
 
+{size=26}This game was made for the Toadhouse Visual Novel Game Jam 2021{/size}
+{vspace=5}{/font}""")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
