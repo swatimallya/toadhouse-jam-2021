@@ -109,8 +109,8 @@ menu:
         jump Starters1_Again_Mina
     "...":
         mina "She always found something she didn't like about the food she made."
-        mina "I think I learned to be hard on myself just observing her"
-        mina "but whenever I notice myself doing that, I stop."
+        mina "I think I learned to be hard on myself just observing her."
+        mina "But whenever I notice myself doing that, I stop."
 menu:
     "Offer a different starter.":
         jump Starters1_Again_Mina
@@ -462,14 +462,14 @@ label FoodOptions2_Koshary:
     if MentionedOlderBrotherName:
         mina "Thomas, my older brother, always tagged along."
     else:
-        mina "My older brother, always tagged along."
+        mina "My older brother always tagged along."
         mina "His name is Thomas, by the way."
     mina "My younger brother, David, didn't like it at all."
     mina "It's too much for the stomach to handle."
     mina "I'm sure you know, chef."
     "You don't know."
-    "That doesn't stop you from making the best Koshary dish"
-    mina "I can't wait to taste this one"
+    "That doesn't stop you from making the best Koshary dish."
+    mina "I can't wait to taste this one!"
     mina "Something about Koshary in Egypt, you just never know what you'll get at each place."
     mina "It always tasted a little different at every place that made it."
     mina "Even the same chain of restaurants."
