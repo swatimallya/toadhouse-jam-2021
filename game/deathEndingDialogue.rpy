@@ -159,7 +159,7 @@ label question2_DoneMore:
     show death smug
     death "That's not even counting my realm."
     show death neutral
-    death "They told me that this thought made them realize that whatever they're going through, the world is still turning."
+    death "They told me that this thought made them realise that whatever they're going through, the world is still turning."
     death "And somehow that made them feel like that applies to everything."
     death "Nature doesn't seem to stress over it, it keeps going."
     death "The animals, the sun, the moon and the earth are just doing what they're good at."
