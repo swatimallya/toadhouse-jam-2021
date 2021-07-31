@@ -238,7 +238,7 @@ label MTea_Mina:
     mina "And we made tea while we talked about our lives up to that point."
     mina "He said he missed me, I had been living in a different city for a few years by then."
     if talkedAboutFather:
-        mina "\"Mina,\" he said, \"I realized I was too hard to deal with too late.\""
+        mina "\"Mina,\" he said, \"I realised I was too hard to deal with too late.\""
     mina "He felt like a different person then, and whatever I felt was difficult between us just faded away."
     show mina relaxed
     stop ambience fadeout 2.0
@@ -345,8 +345,8 @@ label Beer_Mina:
     mina "..."
     mina "I didn't like that."
     mina "I think me and him had the same issues with dad, he was too distant and acted like he knew us."
-    mina "I realized that I did the same thing with him."
-    mina "I immediately apologized!"
+    mina "I realised that I did the same thing with him."
+    mina "I immediately apologised!"
     mina "I explained to him the way I saw it in my head and how I felt that I had to take care of him."
     mina "And how I thought I was protecting him from the rest of the family because "
     extend "I saw the \"real\" them."
@@ -356,7 +356,7 @@ label Beer_Mina:
         $ renpy.music.set_volume(0.0, 0.0, channel="minaHappyHarmony")
         $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
         $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
-        mina "But I realized David was always doing better than me mentally."
+        mina "But I realised David was always doing better than me mentally."
         mina "I had to ask him what his secret was."
     mina "He told me I didn't have to do all these mental gymnastics."
     mina "\"You spent too much time worrying about me,\" he said."
@@ -403,7 +403,7 @@ label FoodOptions2_MolokheyaAndRice:
     mina "It reminds me a lot of the time after I quit my first job and went back home for a while."
     if talkedAboutMother:
         show mina sigh
-        mina "Mom still had that look that made me feel like I did something wrong."
+        mina "Mama still had that look that made me feel like I did something wrong."
         mina "I don't even think she knew what I did at my work."
         mina "But she still expressed her \"disappointment\" or whatever."
     #sfx something is finished
@@ -420,7 +420,7 @@ label FoodOptions2_MolokheyaAndRice:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(1.0, 0.0, channel="minaFreeHarmony")
     mina "I remember something!"
-    mina "The first few days after I was back, there was some tension between me and mom."
+    mina "The first few days after I was back, there was some tension between me and mama."
     if talkedAboutMother:
         mina "She kept asking what was my next opportunity."
         mina "\"So you just left without having a plan?\" she asked."
@@ -482,7 +482,7 @@ label FoodOptions2_Koshary:
         mina "But he still tried to make sense of dad's control over us."
     if talkedAboutMother:
         mina "He wasn't telling us he was disappointed."
-        mina "But he was always silent when mom did that."
+        mina "But he was always silent when mama did that."
     mina "It felt like he thought he was the guardian of his younger siblings."
     mina "But in reality it felt like he was a lieutenant to the parents."
     play sound plate volume 1.0
@@ -503,17 +503,17 @@ label FoodOptions2_Koshary:
     mina "Thomas visited me at my new home to say hi."
     mina "He asked to take me out for Koshary."
     mina "We went out to one of the good Koshary places."
-    mina "\"Mina,\" he said, \"I want to apologize.\""
+    mina "\"Mina,\" he said, \"I want to apologise.\""
     mina "I wondered what he meant with that."
     mina "Turns out he felt guilty for all the time of us at home."
     mina "He says he should have been a better brother."
     mina "\"Are you doing this again?\" I asked. "
     extend "\"You're being hard on yourself again.\""
     mina "I told him that me and David already knew that he was as hard on himself as he was on us."
-    mina "I said that we were waiting for him to realize it. We thought that since we did he should've already done it."
+    mina "I said that we were waiting for him to realise it. We thought that since we did he should've already done it."
     mina "\"I think in a way I'm the youngest then,\" he said."
     mina "He wasn't."
-    mina "But I agreed cause I wanted him to feel good!"
+    mina "But I agreed because I wanted him to feel good!"
     mina "To be fair, David told me that about Thomas but I didn't believe it."
     mina "I only believed it when I heard it from him and I'm glad I did."
     mina "Thank you for the meal!"
@@ -554,7 +554,7 @@ label Ending_Mina:
     mina "You're saying I lived long enough to meet all of them."
     mina "I had a farm and I grew old in it with my loved ones."
     show mina sigh
-    mina "I made sure I didn't repeat my same mistakes or the mistakes my family has done."
+    mina "I made sure I didn't repeat what I had gone through when I was younger."
     show mina neutral
     mina "I made new ones."
     show mina relaxed
