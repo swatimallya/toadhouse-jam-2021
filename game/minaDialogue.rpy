@@ -33,7 +33,7 @@ define audio.stoveOff = "audio/OffStove.ogg"
 #tea pouring
 
 init python:
-    renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("ambience", mixer="sfx", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaDrums", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaHappyMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
     renpy.music.register_channel("minaFreeMelody", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
@@ -227,7 +227,7 @@ label MTea_Mina:
     $ renpy.music.set_volume(1.0, 0.0, channel="minaHappyHarmony")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeMelody")
     $ renpy.music.set_volume(0.0, 0.0, channel="minaFreeHarmony")
-    play ambience gardenAmbience fadein 1.5 volume 0.4
+    play ambience gardenAmbience fadein 1.5 volume 0.5
 
     mina "The night before the wedding! Dad came over to my house and we stayed in the garden outside."
     mina "There was a cool breeze, the stars were beautiful and we were sitting on pop up chairs."

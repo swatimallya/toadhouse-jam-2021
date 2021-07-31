@@ -7,7 +7,7 @@ define audio.mainTheme = "audio/MainTheme.ogg"
 
 
 init python:
-    renpy.music.register_channel("ambience", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
+    renpy.music.register_channel("ambience", mixer="sfx", loop=True, stop_on_mute=True, tight=False, file_prefix=u'', file_suffix=u'', buffer_queue=True, movie=False, framedrop=True)
 
 #-----death art----
 #death neutral
