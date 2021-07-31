@@ -478,13 +478,13 @@ label FoodOptions2_Koshary:
     "-and of course the fry the onions."
     show mina sigh
     if talkedAboutFather:
-        mina "He was of course gentler than dad in many ways."
+        mina "Thomas was of course gentler than dad in many ways."
         mina "But he still tried to make sense of dad's control over us."
     if talkedAboutMother:
-        mina "He wasn't telling us he was disappointed."
+        mina "Thomas wasn't telling us he was disappointed."
         mina "But he was always silent when mama did that."
-    mina "It felt like he thought he was the guardian of his younger siblings."
-    mina "But in reality it felt like he was a lieutenant to the parents."
+    mina "It felt like Thomas thought he was the guardian of his younger siblings."
+    mina "But in reality it felt like he was a lieutenant to our parents."
     play sound plate volume 1.0
     "Koshary is finally done!"
     "You put everything in one dish."
