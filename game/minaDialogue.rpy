@@ -475,7 +475,7 @@ label FoodOptions2_Koshary:
     mina "Even the same chain of restaurants."
     play sound cooking volume 1.0
     "You prepare the pasta, lentils, rice, chickpeas and salsa."
-    "-and of course the fry the onions."
+    "-and of course fry the onions."
     show mina sigh
     if talkedAboutFather:
         mina "Thomas was of course gentler than dad in many ways."
